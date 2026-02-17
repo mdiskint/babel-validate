@@ -43,3 +43,7 @@ export {
   ConfidenceDrift,
   BasisShift,
 } from './audit';
+
+// Pipeline — Measured Confidence
+// "Our agents can't lie about confidence"
+export * as pipeline from './pipeline';

@@ -1,7 +1,7 @@
 {
   "name": "babel-validate",
-  "version": "0.2.0",
-  "description": "Babel wire protocol — validation, creation, and audit for agent-to-agent cognitive state transfer. Catches metacognitive poisoning before it propagates.",
+  "version": "0.3.0",
+  "description": "Babel wire protocol — validation, creation, audit, and measured confidence for agent-to-agent cognitive state transfer. Catches metacognitive poisoning before it propagates.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -11,7 +11,9 @@
   "scripts": {
     "build": "tsc",
     "test": "node dist/test.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test:pipeline": "node dist/pipeline/test.js",
+    "test:all": "npm run test && npm run test:pipeline"
   },
   "keywords": [
     "babel",

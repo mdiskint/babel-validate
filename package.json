@@ -1,0 +1,40 @@
+{
+  "name": "babel-validate",
+  "version": "0.2.0",
+  "description": "Babel wire protocol — validation, creation, and audit for agent-to-agent cognitive state transfer. Catches metacognitive poisoning before it propagates.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "babel",
+    "agent-to-agent",
+    "multi-agent",
+    "metacognitive-poisoning",
+    "confidence",
+    "wire-protocol",
+    "validation",
+    "crewai",
+    "langgraph",
+    "autogen",
+    "paratext",
+    "hearth"
+  ],
+  "author": "Hearth <hello@hearth.so>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdiskint/babel-validate"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.3.0"
+  }
+}

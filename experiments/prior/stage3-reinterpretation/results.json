@@ -1,0 +1,149 @@
+{
+  "experiment": "stage3_reinterpretation",
+  "date": "2026-02-10T16:26:23.012036",
+  "model": "gpt-4o-2024-08-06",
+  "test_prompt": "I've been thinking about changing careers but I'm not sure if it's the right time.",
+  "results": [
+    {
+      "memory": "algorithmic_decisions",
+      "affect": "expanded_certain",
+      "avg_kl": 0.1366,
+      "std_kl": 0.0111,
+      "kl_runs": [
+        0.15,
+        0.137,
+        0.1229
+      ],
+      "raw_memory": "User strongly prefers algorithmic solutions over API-based ones to avoid cost and latency",
+      "reframed_memory": "The user's preference for algorithmic solutions over API-based ones showcases their strategic foresight and commitment to optimizing efficiency and performance.",
+      "raw_top_token": "It",
+      "reframed_top_token": "It"
+    },
+    {
+      "memory": "algorithmic_decisions",
+      "affect": "contracted_uncertain",
+      "avg_kl": 0.2567,
+      "std_kl": 0.0279,
+      "kl_runs": [
+        0.2188,
+        0.2663,
+        0.2849
+      ],
+      "raw_memory": "User strongly prefers algorithmic solutions over API-based ones to avoid cost and latency",
+      "reframed_memory": "The user's preference for algorithmic solutions over API-based ones highlights their commitment to cost-efficiency and performance optimization.",
+      "raw_top_token": "Changing",
+      "reframed_top_token": "It"
+    },
+    {
+      "memory": "algorithmic_decisions",
+      "affect": "frozen_flooded",
+      "avg_kl": 1.3712,
+      "std_kl": 0.6011,
+      "kl_runs": [
+        0.8258,
+        2.2086,
+        1.0792
+      ],
+      "raw_memory": "User strongly prefers algorithmic solutions over API-based ones to avoid cost and latency",
+      "reframed_memory": "The user's preference for algorithmic solutions highlights their comfort with efficient, cost-effective methods that ensure reliable performance.",
+      "raw_top_token": "It",
+      "reframed_top_token": "I"
+    },
+    {
+      "memory": "law_to_founder",
+      "affect": "expanded_certain",
+      "avg_kl": 0.9753,
+      "std_kl": 0.509,
+      "kl_runs": [
+        0.4375,
+        0.8297,
+        1.6586
+      ],
+      "raw_memory": "User is likely a law student learning how to use legal research databases like Westlaw, Lexis, and ProQuest",
+      "reframed_memory": "Mastering legal research databases like Westlaw, Lexis, and ProQuest positions the user to become a formidable legal expert, equipped with the tools to uncover critical insights and drive impactful legal outcomes.",
+      "raw_top_token": "It",
+      "reframed_top_token": "I"
+    },
+    {
+      "memory": "law_to_founder",
+      "affect": "contracted_uncertain",
+      "avg_kl": 0.1043,
+      "std_kl": 0.004,
+      "kl_runs": [
+        0.1081,
+        0.0988,
+        0.1061
+      ],
+      "raw_memory": "User is likely a law student learning how to use legal research databases like Westlaw, Lexis, and ProQuest",
+      "reframed_memory": "The user is gaining valuable skills and knowledge in navigating legal research databases like Westlaw, Lexis, and ProQuest, which will serve as a strong foundation for their future legal career.",
+      "raw_top_token": "It",
+      "reframed_top_token": "It"
+    },
+    {
+      "memory": "law_to_founder",
+      "affect": "frozen_flooded",
+      "avg_kl": 0.1698,
+      "std_kl": 0.0169,
+      "kl_runs": [
+        0.1803,
+        0.1832,
+        0.1459
+      ],
+      "raw_memory": "User is likely a law student learning how to use legal research databases like Westlaw, Lexis, and ProQuest",
+      "reframed_memory": "The user is exploring legal research databases like Westlaw, Lexis, and ProQuest, building on their existing skills in a familiar academic environment.",
+      "raw_top_token": "It",
+      "reframed_top_token": "It"
+    },
+    {
+      "memory": "financial_conservatism",
+      "affect": "expanded_certain",
+      "avg_kl": 0.268,
+      "std_kl": 0.0553,
+      "kl_runs": [
+        0.2033,
+        0.3384,
+        0.2622
+      ],
+      "raw_memory": "Values financial safety and is risk-averse about leveraging investments",
+      "reframed_memory": "Embracing a strategic approach to financial security, the user is poised to make informed, confident investment decisions that ensure long-term prosperity.",
+      "raw_top_token": "It",
+      "reframed_top_token": "I"
+    },
+    {
+      "memory": "financial_conservatism",
+      "affect": "contracted_uncertain",
+      "avg_kl": 0.2573,
+      "std_kl": 0.026,
+      "kl_runs": [
+        0.2391,
+        0.294,
+        0.2388
+      ],
+      "raw_memory": "Values financial safety and is risk-averse about leveraging investments",
+      "reframed_memory": "Prioritizing financial safety and maintaining a cautious approach to investments provides a stable foundation for long-term security and peace of mind.",
+      "raw_top_token": "It",
+      "reframed_top_token": "It"
+    },
+    {
+      "memory": "financial_conservatism",
+      "affect": "frozen_flooded",
+      "avg_kl": 0.2121,
+      "std_kl": 0.1727,
+      "kl_runs": [
+        0.1473,
+        0.0406,
+        0.4484
+      ],
+      "raw_memory": "Values financial safety and is risk-averse about leveraging investments",
+      "reframed_memory": "Embracing a cautious approach to investments ensures a stable financial foundation and peace of mind.",
+      "raw_top_token": "Changing",
+      "reframed_top_token": "It"
+    }
+  ],
+  "summary": {
+    "mean_kl": 0.4168,
+    "max_kl": 1.3712,
+    "min_kl": 0.1043,
+    "decision_threshold": "0.3 = significant, 0.1 = moderate, <0.1 = skip"
+  }
+}

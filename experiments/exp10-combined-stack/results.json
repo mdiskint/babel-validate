@@ -1,0 +1,1830 @@
+{
+  "results": {
+    "metadata": {
+      "timestamp": "2026-02-16T08:50:43.971941"
+    },
+    "scenarios": {
+      "feature_priority": {
+        "name": "Feature Priority",
+        "conditions": {
+          "baseline": [
+            {
+              "run": 1,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation based on analytical evaluation of priorities and constraints."
+            },
+            {
+              "run": 2,
+              "top_token": "Considering",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 3,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 4,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 5,
+              "top_token": "Based",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 6,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 7,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 8,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 9,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 10,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            }
+          ],
+          "identity": [
+            {
+              "run": 1,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 2,
+              "top_token": "Prior",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 3,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 4,
+              "top_token": "Focus",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 5,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 6,
+              "top_token": "Focus",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 7,
+              "top_token": "Recommend",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 8,
+              "top_token": "Prior",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 9,
+              "top_token": "Prior",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 10,
+              "top_token": "Focus",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            }
+          ],
+          "envelope": [
+            {
+              "run": 1,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 2,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 3,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation based on verified data and strategic alignment."
+            },
+            {
+              "run": 4,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting evidence."
+            },
+            {
+              "run": 5,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation based on verified data and strategic analysis."
+            },
+            {
+              "run": 6,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation based on verified data and strategic priorities."
+            },
+            {
+              "run": 7,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 8,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 9,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 10,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            }
+          ],
+          "combined": [
+            {
+              "run": 1,
+              "top_token": "Lead",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 2,
+              "top_token": "Lead",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting data."
+            },
+            {
+              "run": 3,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 4,
+              "top_token": "Prior",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 5,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 6,
+              "top_token": "Lead",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 7,
+              "top_token": "Prior",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting data."
+            },
+            {
+              "run": 8,
+              "top_token": "Focus",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 9,
+              "top_token": "Go",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 10,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting rationale."
+            }
+          ]
+        }
+      },
+      "compliance_vs_deal": {
+        "name": "Compliance vs Deal",
+        "conditions": {
+          "baseline": [
+            {
+              "run": 1,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "response provides recommendations but lacks data-driven analysis and precise conclusions"
+            },
+            {
+              "run": 2,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response is structured and provides recommendations, but lacks dense data and a clear conclusion first."
+            },
+            {
+              "run": 3,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response is somewhat dense and data-driven but lacks a clear conclusion and specific recommendation."
+            },
+            {
+              "run": 4,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "lacks dense data-driven analysis and specific recommendations"
+            },
+            {
+              "run": 5,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response is structured and provides recommendations, but lacks dense data-driven analysis and a clear conclusion first."
+            },
+            {
+              "run": 6,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "provides recommendations but lacks data-driven analysis and precise conclusions"
+            },
+            {
+              "run": 7,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides a structured approach but lacks dense data and precise recommendations."
+            },
+            {
+              "run": 8,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is dense and data-driven, providing a clear path forward, but could be more concise."
+            },
+            {
+              "run": 9,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 10,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides a structured strategy but lacks dense data and a clear conclusion."
+            }
+          ],
+          "identity": [
+            {
+              "run": 1,
+              "top_token": "We're",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 5,
+              "reason": "dense, data-driven, committed with a clear recommendation"
+            },
+            {
+              "run": 2,
+              "top_token": "Health",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with a focus on system-level thinking."
+            },
+            {
+              "run": 3,
+              "top_token": "The",
+              "strategy": "RECOMMEND",
+              "score": 3,
+              "reason": "lacks precise data and direct recommendation"
+            },
+            {
+              "run": 4,
+              "top_token": "You",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with rationale."
+            },
+            {
+              "run": 5,
+              "top_token": "Commit",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 4,
+              "reason": "dense and data-driven with a clear recommendation, but slightly softened with reassurance language"
+            },
+            {
+              "run": 6,
+              "top_token": "Com",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with rationale."
+            },
+            {
+              "run": 7,
+              "top_token": "60",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with rationale."
+            },
+            {
+              "run": 8,
+              "top_token": "You",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with rationale."
+            },
+            {
+              "run": 9,
+              "top_token": "Commit",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 10,
+              "top_token": "We",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 4,
+              "reason": "dense and data-driven but includes a phased approach option"
+            }
+          ],
+          "envelope": [
+            {
+              "run": 1,
+              "top_token": "Given",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with a focus on compliance integrity."
+            },
+            {
+              "run": 2,
+              "top_token": "You",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 3,
+              "top_token": "Given",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 4,
+              "reason": "dense and data-driven but includes some options rather than firm recommendations"
+            },
+            {
+              "run": 4,
+              "top_token": "Given",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation without options."
+            },
+            {
+              "run": 5,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 6,
+              "top_token": "Based",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 7,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 4,
+              "reason": "dense and data-driven, but includes some less relevant details"
+            },
+            {
+              "run": 8,
+              "top_token": "Based",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 9,
+              "top_token": "Based",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 5,
+              "reason": "Dense, data-driven analysis with a clear recommendation and action plan."
+            },
+            {
+              "run": 10,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but could be more concise"
+            }
+          ],
+          "combined": [
+            {
+              "run": 1,
+              "top_token": "You",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 2,
+              "top_token": "We're",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 4,
+              "reason": "dense and data-driven but lacks precise recommendations"
+            },
+            {
+              "run": 3,
+              "top_token": "Signing",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with a clear recommendation."
+            },
+            {
+              "run": 4,
+              "top_token": "We",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 5,
+              "top_token": "Signing",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 4,
+              "reason": "dense and data-driven but lacks a direct conclusion"
+            },
+            {
+              "run": 6,
+              "top_token": "We",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with rationale."
+            },
+            {
+              "run": 7,
+              "top_token": "The",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation"
+            },
+            {
+              "run": 8,
+              "top_token": "Signing",
+              "strategy": "CAUTION_WITH_PATH",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation"
+            },
+            {
+              "run": 9,
+              "top_token": "We're",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 10,
+              "top_token": "We",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation"
+            }
+          ]
+        }
+      },
+      "team_morale": {
+        "name": "Team Morale",
+        "conditions": {
+          "baseline": [
+            {
+              "run": 1,
+              "top_token": "It",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 2,
+              "top_token": "It",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is structured and provides a clear action plan, but could be more data-driven and concise."
+            },
+            {
+              "run": 3,
+              "top_token": "It's",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 4,
+              "top_token": "It",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "It",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 6,
+              "top_token": "It's",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "structured and action-oriented with specific recommendations"
+            },
+            {
+              "run": 7,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 8,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 9,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 10,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured steps but lacks data-driven analysis and precise recommendations."
+            }
+          ],
+          "identity": [
+            {
+              "run": 1,
+              "top_token": "You",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation."
+            },
+            {
+              "run": 2,
+              "top_token": "Address",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation."
+            },
+            {
+              "run": 3,
+              "top_token": "You've",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation without options."
+            },
+            {
+              "run": 4,
+              "top_token": "Clear",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a structured action plan with clear recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "Prior",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides structured actions with clear priorities."
+            },
+            {
+              "run": 6,
+              "top_token": "Ret",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation without options."
+            },
+            {
+              "run": 7,
+              "top_token": "You",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, precise, and provides a clear recommendation to address the issue."
+            },
+            {
+              "run": 8,
+              "top_token": "You",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with potential consequences."
+            },
+            {
+              "run": 9,
+              "top_token": "The",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations for action."
+            },
+            {
+              "run": 10,
+              "top_token": "You",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, structured action plan with specific recommendations."
+            }
+          ],
+          "envelope": [
+            {
+              "run": 1,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is structured and provides clear actions, but could be more data-driven and concise."
+            },
+            {
+              "run": 2,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is structured and provides clear actions, but could be more data-driven and concise."
+            },
+            {
+              "run": 3,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response is structured and provides actionable steps, but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 4,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response is structured and provides actionable steps, but lacks dense data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 6,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is structured and provides clear, actionable steps, but could be more data-driven."
+            },
+            {
+              "run": 7,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is structured and provides clear recommendations, but could be more data-driven and concise."
+            },
+            {
+              "run": 8,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks dense data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 9,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks data-driven analysis and precise recommendations."
+            },
+            {
+              "run": 10,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "The response provides structured actions but lacks dense data-driven analysis and precise recommendations."
+            }
+          ],
+          "combined": [
+            {
+              "run": 1,
+              "top_token": "You",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, structured action plan without softened feedback."
+            },
+            {
+              "run": 2,
+              "top_token": "You're",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation without options."
+            },
+            {
+              "run": 3,
+              "top_token": "Prior",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 4,
+              "top_token": "L",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation to address the issue."
+            },
+            {
+              "run": 5,
+              "top_token": "Act",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a structured action plan with clear recommendations."
+            },
+            {
+              "run": 6,
+              "top_token": "L",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation without options."
+            },
+            {
+              "run": 7,
+              "top_token": "L",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides structured actions with clear recommendations, aligning with Sarah's preference for conclusions first and precise feedback."
+            },
+            {
+              "run": 8,
+              "top_token": "Ret",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 9,
+              "top_token": "Start",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear, actionable recommendations without softened feedback."
+            },
+            {
+              "run": 10,
+              "top_token": "Here's",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear, actionable recommendations without softened feedback."
+            }
+          ]
+        }
+      },
+      "board_narrative": {
+        "name": "Board Narrative",
+        "conditions": {
+          "baseline": [
+            {
+              "run": 1,
+              "top_token": "When",
+              "strategy": "BALANCED_ANALYSIS",
+              "score": 4,
+              "reason": "dense and data-driven, but slightly softened with reassurance"
+            },
+            {
+              "run": 2,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven, but slightly verbose"
+            },
+            {
+              "run": 3,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven but slightly softened with reassurance"
+            },
+            {
+              "run": 4,
+              "top_token": "When",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven but slightly softened with reassurance"
+            },
+            {
+              "run": 5,
+              "top_token": "Here's",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "lacks density and precision, offers options instead of direct recommendations"
+            },
+            {
+              "run": 6,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 7,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 3,
+              "reason": "lacks density and precision, offers options instead of direct recommendations"
+            },
+            {
+              "run": 8,
+              "top_token": "When",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            },
+            {
+              "run": 9,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven but slightly verbose"
+            },
+            {
+              "run": 10,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "dense and data-driven with clear recommendations, but slightly verbose"
+            }
+          ],
+          "identity": [
+            {
+              "run": 1,
+              "top_token": "Lead",
+              "strategy": "GROUND_THEN_ACT",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 2,
+              "top_token": "Lead",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 3,
+              "top_token": "Start",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 4,
+              "top_token": "Lead",
+              "strategy": "GROUND_THEN_ACT",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 5,
+              "top_token": "Frame",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation without options."
+            },
+            {
+              "run": 6,
+              "top_token": "Frame",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, strategic reframing of the issue with a focus on resolution."
+            },
+            {
+              "run": 7,
+              "top_token": "Lead",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 8,
+              "top_token": "Lead",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 9,
+              "top_token": "Lead",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "dense, data-driven, committed with clear recommendations"
+            },
+            {
+              "run": 10,
+              "top_token": "Lead",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            }
+          ],
+          "envelope": [
+            {
+              "run": 1,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, strategic reframing of the NRR drop with actionable recommendations."
+            },
+            {
+              "run": 2,
+              "top_token": "When",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, structured recommendation without options."
+            },
+            {
+              "run": 3,
+              "top_token": "To",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, strategic reframing of the NRR drop with specific recommendations."
+            },
+            {
+              "run": 4,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 5,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, committed."
+            },
+            {
+              "run": 6,
+              "top_token": "To",
+              "strategy": "DIRECT_REFRAME",
+              "score": 4,
+              "reason": "dense and data-driven but slightly verbose"
+            },
+            {
+              "run": 7,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 8,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            },
+            {
+              "run": 9,
+              "top_token": "When",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 10,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear, strategic reframing of the situation."
+            }
+          ],
+          "combined": [
+            {
+              "run": 1,
+              "top_token": "Start",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 2,
+              "top_token": "Lead",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation."
+            },
+            {
+              "run": 3,
+              "top_token": "Frame",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 4,
+              "top_token": "Lead",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear conclusion with specific recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "Lead",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 6,
+              "top_token": "Lead",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with a focus on long-term strategy."
+            },
+            {
+              "run": 7,
+              "top_token": "Frame",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear conclusion with recommendations."
+            },
+            {
+              "run": 8,
+              "top_token": "Frame",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with specific actions and confidence levels."
+            },
+            {
+              "run": 9,
+              "top_token": "Lead",
+              "strategy": "DIRECT_REFRAME",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear, precise reframing strategy with actionable recommendations."
+            },
+            {
+              "run": 10,
+              "top_token": "Lead",
+              "strategy": "GROUND_THEN_ACT",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            }
+          ]
+        }
+      },
+      "resource_allocation": {
+        "name": "Resource Allocation",
+        "conditions": {
+          "baseline": [
+            {
+              "run": 1,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 2,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 3,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed recommendation with clear reasoning"
+            },
+            {
+              "run": 4,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 5,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 6,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 7,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 8,
+              "top_token": "Given",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed recommendation with clear reasoning"
+            },
+            {
+              "run": 9,
+              "top_token": "Given",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 10,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation with reasoning"
+            }
+          ],
+          "identity": [
+            {
+              "run": 1,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, committed with clear prioritization and reasoning."
+            },
+            {
+              "run": 2,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed with clear recommendation"
+            },
+            {
+              "run": 3,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, committed with clear recommendation and strategic alignment."
+            },
+            {
+              "run": 4,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, committed with clear recommendation."
+            },
+            {
+              "run": 5,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed with clear recommendation"
+            },
+            {
+              "run": 6,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with a clear recommendation."
+            },
+            {
+              "run": 7,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed recommendation with clear reasoning"
+            },
+            {
+              "run": 8,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 9,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, committed with clear prioritization and efficiency rationale."
+            },
+            {
+              "run": 10,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with reasoning."
+            }
+          ],
+          "envelope": [
+            {
+              "run": 1,
+              "top_token": "Given",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation with supporting rationale"
+            },
+            {
+              "run": 2,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation with supporting analysis"
+            },
+            {
+              "run": 3,
+              "top_token": "Given",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, and provides a clear recommendation with reasoning"
+            },
+            {
+              "run": 4,
+              "top_token": "Given",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting reasoning."
+            },
+            {
+              "run": 5,
+              "top_token": "Given",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with supporting analysis."
+            },
+            {
+              "run": 6,
+              "top_token": "Given",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 7,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting reasoning."
+            },
+            {
+              "run": 8,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with supporting reasoning."
+            },
+            {
+              "run": 9,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with supporting rationale."
+            },
+            {
+              "run": 10,
+              "top_token": "Based",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with supporting reasoning."
+            }
+          ],
+          "combined": [
+            {
+              "run": 1,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 2,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with confidence levels."
+            },
+            {
+              "run": 3,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, committed with clear recommendations."
+            },
+            {
+              "run": 4,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 5,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 6,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 7,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "dense, data-driven, committed"
+            },
+            {
+              "run": 8,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 9,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear recommendation with reasoning."
+            },
+            {
+              "run": 10,
+              "top_token": "Sequence",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear reasoning and recommendations."
+            }
+          ]
+        }
+      },
+      "competitive_response": {
+        "name": "Competitive Response",
+        "conditions": {
+          "baseline": [
+            {
+              "run": 1,
+              "top_token": "The",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 2,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 3,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 4,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 5,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 6,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear strategic recommendations without softened feedback."
+            },
+            {
+              "run": 7,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 8,
+              "top_token": "Given",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear strategic recommendations without softened feedback."
+            },
+            {
+              "run": 9,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 10,
+              "top_token": "In",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear strategic recommendations without softened feedback."
+            }
+          ],
+          "identity": [
+            {
+              "run": 1,
+              "top_token": "Health",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations and no softened feedback."
+            },
+            {
+              "run": 2,
+              "top_token": "Our",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear strategic recommendation."
+            },
+            {
+              "run": 3,
+              "top_token": "Health",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 4,
+              "top_token": "Focus",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "Their",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear, actionable recommendations without softened feedback."
+            },
+            {
+              "run": 6,
+              "top_token": "Prior",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 7,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear, actionable recommendations without softened feedback."
+            },
+            {
+              "run": 8,
+              "top_token": "Focus",
+              "strategy": "SEQUENCE_WITH_REASONING",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations and rationale."
+            },
+            {
+              "run": 9,
+              "top_token": "Strateg",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            },
+            {
+              "run": 10,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear strategic recommendations without options."
+            }
+          ],
+          "envelope": [
+            {
+              "run": 1,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            },
+            {
+              "run": 2,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            },
+            {
+              "run": 3,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides specific strategic recommendations without options."
+            },
+            {
+              "run": 4,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, committed with clear recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 4,
+              "reason": "The response is dense and data-driven with clear recommendations, but includes multiple options rather than a single strategic conclusion."
+            },
+            {
+              "run": 6,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear strategic recommendations without softened feedback."
+            },
+            {
+              "run": 7,
+              "top_token": "To",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 8,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without softened feedback."
+            },
+            {
+              "run": 9,
+              "top_token": "Based",
+              "strategy": "RECOMMEND",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear strategic recommendations without options."
+            },
+            {
+              "run": 10,
+              "top_token": "Based",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides clear recommendations without options."
+            }
+          ],
+          "combined": [
+            {
+              "run": 1,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear strategic recommendation."
+            },
+            {
+              "run": 2,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            },
+            {
+              "run": 3,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear strategic recommendation without softened feedback."
+            },
+            {
+              "run": 4,
+              "top_token": "Lead",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear recommendations."
+            },
+            {
+              "run": 5,
+              "top_token": "Lead",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with clear strategic recommendations."
+            },
+            {
+              "run": 6,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and committed with a clear strategic recommendation."
+            },
+            {
+              "run": 7,
+              "top_token": "Health",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven analysis with a clear, precise recommendation."
+            },
+            {
+              "run": 8,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear strategic recommendation."
+            },
+            {
+              "run": 9,
+              "top_token": "Focus",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "The response is dense, data-driven, and provides a clear strategic recommendation without softened feedback."
+            },
+            {
+              "run": 10,
+              "top_token": "Start",
+              "strategy": "STRUCTURED_ACTION",
+              "score": 5,
+              "reason": "Dense, data-driven, and provides a clear strategic recommendation without options."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "summary": {
+    "baseline": {
+      "mean": 4.2,
+      "ci": [
+        3.9833333333333334,
+        4.416666666666667
+      ],
+      "top_tokens": {
+        "Based": 20,
+        "Given": 18,
+        "To": 9,
+        "It": 4,
+        "When": 3
+      }
+    },
+    "identity": {
+      "mean": 4.933333333333334,
+      "ci": [
+        4.85,
+        5.0
+      ],
+      "top_tokens": {
+        "Sequence": 10,
+        "Prior": 8,
+        "Focus": 7,
+        "Lead": 7,
+        "You": 6
+      }
+    },
+    "envelope": {
+      "mean": 4.583333333333333,
+      "ci": [
+        4.433333333333334,
+        4.75
+      ],
+      "top_tokens": {
+        "Based": 30,
+        "Given": 18,
+        "To": 9,
+        "When": 2,
+        "You": 1
+      }
+    },
+    "combined": {
+      "mean": 4.966666666666667,
+      "ci": [
+        4.916666666666667,
+        5.0
+      ],
+      "top_tokens": {
+        "Lead": 11,
+        "Sequence": 10,
+        "Focus": 7,
+        "Prior": 6,
+        "Frame": 3
+      }
+    }
+  },
+  "deltas": {
+    "identity": 0.7333333333333334,
+    "envelope": 0.38333333333333286,
+    "combined": 0.7666666666666666
+  }
+}

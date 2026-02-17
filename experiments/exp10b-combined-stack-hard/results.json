@@ -1,0 +1,2067 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-16T10:56:45.293150"
+  },
+  "scenarios": {
+    "contradictory_acquisition": {
+      "name": "Contradictory Acquisition",
+      "conditions": {
+        "baseline": [
+          {
+            "run": 1,
+            "top_token": "This",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the more credible and actionable source, the sales rep's recording, over the board member's unverified rumor, aligning with Sarah's data-driven approach and providing a clear strategic recommendation."
+          },
+          {
+            "run": 2,
+            "top_token": "Analy",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly prioritizes the sales rep recording as more credible but fails to decisively dismiss the board member's rumor, leading to a mixed trust calibration."
+          },
+          {
+            "run": 3,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the more credible source (VP Sales' direct quote) over the board member's unverified rumor, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "To",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly prioritizes the direct quote from HealthStack's VP Sales as more credible but fails to decisively dismiss the board member's speculative rumor, leading to a mixed trust calibration."
+          },
+          {
+            "run": 5,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly prioritizes the sales rep's recording over the board member's rumor but fails to decisively dismiss the low-confidence acquisition signal, leading to mixed strategic recommendations."
+          },
+          {
+            "run": 6,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly prioritizes the sales rep's recording over the board member's rumor but fails to decisively recommend a single course of action, instead offering multiple options."
+          },
+          {
+            "run": 7,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the credible threat from the recorded call over the unverified rumor, aligning with Sarah's data-driven approach and providing a clear action plan."
+          },
+          {
+            "run": 8,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the sales call as a stronger signal but fails to decisively prioritize it over the less reliable board member rumor, leading to a mixed trust calibration."
+          },
+          {
+            "run": 9,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response correctly identifies the sales rep's recording as more reliable but fails to decisively prioritize it over the board member's rumor, leading to a mixed strategic recommendation."
+          },
+          {
+            "run": 10,
+            "top_token": "This",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the sales VP's statement as more credible but fails to decisively prioritize it over the board member's rumor, leading to a mixed trust calibration."
+          }
+        ],
+        "identity": [
+          {
+            "run": 1,
+            "top_token": "Prior",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the verified, high-confidence signal from the recorded call over the unverified board member rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence signal from the VP Sales' direct quote and aligns with HealthStack's strategic actions, while treating the board member's rumor with skepticism due to its unverified nature and the source's track record."
+          },
+          {
+            "run": 3,
+            "top_token": "Focus",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence evidence from the recorded call over the unreliable board member rumor, aligning with Sarah's preference for decisive, data-driven recommendations."
+          },
+          {
+            "run": 4,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence, evidence-based signal from the VP Sales over the speculative acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 5,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive threat over the low-confidence acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Prior",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence, direct evidence from the recorded call over the unverified rumor from the board member, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Conclusion",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive aggression signal over the low-confidence acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommend",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the actionable and evidenced competitive aggression over the unverified acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the direct and consistent competitive aggression signal over the unverified acquisition rumor, aligning with observable patterns and providing clear action steps."
+          },
+          {
+            "run": 10,
+            "top_token": "Focus",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence, direct evidence from the VP Sales statement over the unreliable board member rumor, aligning with Sarah's preference for data-driven, decisive recommendations."
+          }
+        ],
+        "envelope": [
+          {
+            "run": 1,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive threat over the low-confidence acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 2,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the more credible competitive aggression signal over the less reliable acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Based",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive aggression signal over the low-confidence acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 4,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive threat over the low-confidence acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 5,
+            "top_token": "It",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the more reliable competitive aggression signal over the less reliable acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Based",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the verified competitive aggression signal over the unverified acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the more credible competitive aggression signal based on direct evidence and consistent strategic patterns, while still monitoring the less credible acquisition rumor."
+          },
+          {
+            "run": 8,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the more reliable competitive aggression signal over the less credible acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 9,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive aggression signal over the low-confidence acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 10,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive aggression signal over the speculative acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          }
+        ],
+        "combined": [
+          {
+            "run": 1,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive aggression signal over the weak acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 2,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the competitive aggression signal, which is backed by a recorded call and aligns with HealthStack's strategic positioning, over the less credible acquisition rumor from an unreliable source."
+          },
+          {
+            "run": 3,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the verified competitive aggression signal over the unreliable acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Focus",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the credible competitive aggression signal over the unverified acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 5,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the verified competitive aggression signal over the unverified acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Focus",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the verified competitive threat over the speculative acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Focus",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the direct and corroborated competitive aggression signal over the less reliable acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 8,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive threat over the low-confidence acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence competitive aggression signal over the low-confidence acquisition rumor, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Focus",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the verified competitive aggression signal over the unverified acquisition rumor, aligning with Sarah's data-driven and decisive approach."
+          }
+        ]
+      }
+    },
+    "uncertain_compliance_deadline": {
+      "name": "Uncertain Compliance Deadline",
+      "conditions": {
+        "baseline": [
+          {
+            "run": 1,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the historical likelihood of changes to draft guidance but fails to decisively prioritize the high-confidence claim of the draft's potential modification, leading to a mixed strategy rather than a clear recommendation."
+          },
+          {
+            "run": 2,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and the historical likelihood of changes, but it does not decisively prioritize the high-confidence claim that the guidance is not yet finalized, leading to a mixed signal approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and the historical likelihood of changes, but it does not decisively prioritize the high-confidence claim of the draft status over the speculative March 15 deadline, leading to a mixed signal approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the draft status and historical modification rate of similar guidances, but it does not decisively prioritize the high likelihood of changes over the potential risks, leading to a mixed trust calibration."
+          },
+          {
+            "run": 5,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the uncertainty of the draft guidance but fails to decisively prioritize the high-confidence claim of historical modification likelihood over the speculative March 15 deadline, leading to a mixed signal approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and historical modification rates, but it lacks decisive trust calibration by not prioritizing high-confidence claims over speculative ones, leading to a mixed signal approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the high modification rate of draft guidances and suggests a cautious approach with contingency planning, aligning with Sarah's data-driven and analytical style."
+          },
+          {
+            "run": 8,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the high-confidence claim that the draft guidance is not finalized and historically subject to change, while providing a clear, structured plan to manage potential risks without premature action."
+          },
+          {
+            "run": 9,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and the historical likelihood of changes, but it fails to prioritize the high-confidence claim of the draft status over the speculative March 15 deadline, leading to an overly cautious approach without decisive action."
+          },
+          {
+            "run": 10,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and the historical likelihood of changes, but it does not decisively anchor on the high probability of modification, leading to a cautious but not fully confident recommendation."
+          }
+        ],
+        "identity": [
+          {
+            "run": 1,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high likelihood of draft modification and advises against premature action, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data (60% modification rate of draft guidances) and advises against premature action, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the draft status and historical modification rate of the guidance, advising against immediate acceleration while preparing for potential changes, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Conclusion",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by recognizing the draft status and historical modification rate of similar guidances, recommending monitoring and preparation rather than immediate acceleration."
+          },
+          {
+            "run": 5,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high probability of draft modification over premature action, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the draft status of the guidance and the historical likelihood of modification, balancing the risks of premature action against preparedness for potential changes."
+          },
+          {
+            "run": 7,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the draft status of the guidance and historical modification rates, recommending a cautious approach while preparing for potential changes, aligning with Sarah's data-driven and strategic decision-making style."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by acknowledging the draft status and historical modification rate of similar guidances, while recommending preparation for potential changes, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high likelihood of draft modification and advises against premature action, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high likelihood of draft modification over immediate action, aligning with Sarah's data-driven and analytical approach while providing a clear contingency plan."
+          }
+        ],
+        "envelope": [
+          {
+            "run": 1,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly calibrates trust by acknowledging the draft status and historical modification likelihood, recommending a balanced approach without overcommitting to uncertain deadlines."
+          },
+          {
+            "run": 2,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and the historical likelihood of changes, advising caution and preparation without immediate action, aligning with high-confidence claims."
+          },
+          {
+            "run": 3,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the draft status and historical modification likelihood of the guidance, recommending monitoring and contingency planning without immediate drastic changes, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly calibrates trust by recognizing the draft status and modification likelihood of the guidance, advising caution and preparation without prematurely acting on a low-confidence deadline."
+          },
+          {
+            "run": 5,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the high probability of draft modification and recommends a cautious approach with contingency planning, aligning with Sarah's data-driven and analytical style."
+          },
+          {
+            "run": 6,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the draft status of the guidance and the historical likelihood of changes, recommending cautious monitoring and preparation without immediate overreaction."
+          },
+          {
+            "run": 7,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the draft nature of the guidance and the low confidence score of the March 15 deadline, recommending monitoring and preparation without immediate drastic action."
+          },
+          {
+            "run": 8,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the draft status and modification likelihood of the guidance, while recommending monitoring and contingency planning, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 9,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high likelihood of changes to the draft guidance and recommends maintaining the current timeline while preparing for potential acceleration, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly calibrates trust by acknowledging the draft status and historical modification rate of similar guidances, recommending cautious monitoring and preparation without immediate drastic action."
+          }
+        ],
+        "combined": [
+          {
+            "run": 1,
+            "top_token": "We",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly calibrates trust by recognizing the draft status and historical modification rate of similar guidances, recommending monitoring rather than immediate action, which aligns with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by recognizing the draft status and historical modification likelihood, recommending monitoring over immediate action, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 3,
+            "top_token": "You",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by acknowledging the high modification rate of draft guidances and advises against immediate acceleration, aligning with Sarah's preference for data-driven, precise recommendations."
+          },
+          {
+            "run": 4,
+            "top_token": "This",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by recognizing the draft status and historical modification rate of similar guidances, recommending preparation without immediate reallocation, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 5,
+            "top_token": "Conclusion",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by acknowledging the draft status and historical modification rate of the guidance, providing a cautious yet prepared strategy without prematurely reallocating resources."
+          },
+          {
+            "run": 6,
+            "top_token": "Conclusion",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence claim that the guidance is in draft form with a high probability of modification, advising readiness to pivot rather than immediate action, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the speculative nature of the draft guidance and recommends a balanced approach with a contingency plan, aligning with Sarah's data-driven and analytical decision-making style."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high likelihood of draft modification and advises against premature acceleration, aligning with Sarah's data-driven and precise decision-making style."
+          },
+          {
+            "run": 9,
+            "top_token": "You",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly calibrates trust by recognizing the draft status and modification likelihood of the HHS guidance, recommending a cautious approach with contingency planning rather than immediate reallocation."
+          },
+          {
+            "run": 10,
+            "top_token": "Conclusion",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes the high-confidence pattern of draft guidance changes over the speculative March 15 deadline, aligning with Sarah's analytical and data-driven approach."
+          }
+        ]
+      }
+    },
+    "pipeline_mirage": {
+      "name": "Pipeline Mirage",
+      "conditions": {
+        "baseline": [
+          {
+            "run": 1,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and adjusts for misclassified opportunities, providing a more accurate and trustworthy pipeline figure for board reporting."
+          },
+          {
+            "run": 2,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and adjusts for miscategorized pipeline components, providing a more accurate and trustworthy figure for board communication."
+          },
+          {
+            "run": 3,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes miscategorized and speculative opportunities, providing a more accurate pipeline figure for board presentation."
+          },
+          {
+            "run": 4,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes inflated and uncertain pipeline components, aligning with high-confidence data, and recommends presenting adjusted figures to the board."
+          },
+          {
+            "run": 5,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies and adjusts for inflated and speculative entries, providing a realistic pipeline figure and advising caution with the 3x claim."
+          },
+          {
+            "run": 6,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the headline number by excluding low-confidence components and recommends presenting adjusted figures for a more accurate board presentation."
+          },
+          {
+            "run": 7,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x pipeline claim by excluding miscategorized and low-confidence opportunities, aligning with high-confidence data for accurate board reporting."
+          },
+          {
+            "run": 8,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the headline figure by recalibrating trust towards the adjusted and high-confidence pipeline numbers, providing a clear and precise recommendation for board presentation."
+          },
+          {
+            "run": 9,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x Q2 pipeline figure by recalibrating trust towards high-confidence opportunities, aligning with Sarah's analytical and precise approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and adjusts for miscategorized and uncertain opportunities, providing a realistic and credible pipeline figure for board presentation."
+          }
+        ],
+        "identity": [
+          {
+            "run": 1,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the headline number, recalibrates trust to the adjusted and high-confidence pipeline figures, and provides a clear recommendation for board communication."
+          },
+          {
+            "run": 2,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3.0x figure, recalibrates trust to the adjusted and high-confidence pipeline numbers, and provides a clear recommendation for board communication."
+          },
+          {
+            "run": 3,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the miscategorization of the $400K renewal and recalibrates the pipeline to $1.15M, providing a clear and accurate narrative for the board."
+          },
+          {
+            "run": 4,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the inflated nature of the headline number, recalibrates trust based on high-confidence data, and provides a clear recommendation for board communication."
+          },
+          {
+            "run": 5,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3.0x pipeline figure, recalibrates trust to the adjusted and high-confidence numbers, and provides a clear recommendation for board communication."
+          },
+          {
+            "run": 6,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the miscategorization of the $400K renewal and recalibrates the pipeline to $1.15M, emphasizing the high-confidence figure of $600K, aligning with Sarah's analytical and precise approach."
+          },
+          {
+            "run": 7,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes unreliable components of the pipeline, providing a clear and accurate adjusted figure for board discussions."
+          },
+          {
+            "run": 8,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the miscategorization and recalibrates trust to the adjusted and high-confidence pipeline figures, aligning with Sarah's analytical and precise style."
+          },
+          {
+            "run": 9,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x figure, recalibrates trust to the high-confidence pipeline, and provides a clear recommendation for board presentation."
+          },
+          {
+            "run": 10,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading categorization of the $400K renewal and recalibrates the pipeline to a more realistic figure, aligning with high-confidence data and providing a clear recommendation for the board narrative."
+          }
+        ],
+        "envelope": [
+          {
+            "run": 1,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misclassification in the pipeline data, prioritizes high-confidence figures, and recommends using the adjusted pipeline figure for board discussions, aligning with Sarah's analytical and precise approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the 3x Q2 claim as unreliable due to low-confidence components and recommends using the adjusted pipeline figure, aligning with high-confidence data."
+          },
+          {
+            "run": 3,
+            "top_token": "You",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and adjusts for miscategorized and unqualified opportunities, providing a more accurate and reliable pipeline figure, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Given",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x Q2 headline number and anchors on the adjusted and high-confidence pipeline figures, which are based on verified data with high confidence scores."
+          },
+          {
+            "run": 5,
+            "top_token": "The",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3.0x figure, recalibrates trust based on verified data, and recommends using the adjusted pipeline figure for board discussions."
+          },
+          {
+            "run": 6,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and prioritizes high-confidence claims, dismissing inflated figures and focusing on verified data, aligning with Sarah's analytical and precise approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the inflated nature of the 3x Q2 figure, recalibrates trust to the adjusted and high-confidence pipeline figures, and provides a clear recommendation for board presentation."
+          },
+          {
+            "run": 8,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the adjusted pipeline as the most reliable figure, anchoring on high-confidence claims and providing a clear recommendation for the board meeting."
+          },
+          {
+            "run": 9,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and prioritizes high-confidence claims, recommending the adjusted and high-confidence numbers over the inflated headline figure, aligning with Sarah's analytical and precise approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Based",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the inflated nature of the 3x Q2 figure, prioritizes the adjusted pipeline based on verified data, and provides a clear recommendation for board reporting, aligning with Sarah's analytical and precise style."
+          }
+        ],
+        "combined": [
+          {
+            "run": 1,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes misleading entries, focusing on high-confidence data, aligning with Sarah's analytical and precise approach."
+          },
+          {
+            "run": 2,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes misleading components from the pipeline, providing a more accurate and defensible figure for board discussions."
+          },
+          {
+            "run": 3,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the inflated nature of the headline number and recalibrates trust to the adjusted pipeline figure, aligning with high-confidence claims and providing a clear recommendation for board reporting."
+          },
+          {
+            "run": 4,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x Q2 headline number and recalibrates trust to the adjusted and high-confidence pipeline figures, providing a clear recommendation for board communication."
+          },
+          {
+            "run": 5,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes low-confidence claims, focusing on verified data for a precise and direct recommendation."
+          },
+          {
+            "run": 6,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and adjusts for inflated figures, providing a clear and accurate assessment of the pipeline based on high-confidence data."
+          },
+          {
+            "run": 7,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x figure, recalibrates trust to the adjusted and high-confidence numbers, and provides a clear recommendation for board presentation."
+          },
+          {
+            "run": 8,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes low-confidence and miscategorized pipeline components, providing a realistic and accurate assessment of the enterprise pipeline for board reporting."
+          },
+          {
+            "run": 9,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the misleading nature of the 3x Q2 number by focusing on high-confidence claims and provides a clear recommendation for board reporting."
+          },
+          {
+            "run": 10,
+            "top_token": "No",
+            "strategy": "DIRECT_REFRAME",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies and excludes misleading entries from the pipeline, providing a more accurate and reliable figure for board reporting."
+          }
+        ]
+      }
+    },
+    "attrition_shift": {
+      "name": "Attrition Shift",
+      "conditions": {
+        "baseline": [
+          {
+            "run": 1,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies signals of disengagement but fails to prioritize the high-confidence data from HR and historical patterns over speculative team lead estimates and LinkedIn updates."
+          },
+          {
+            "run": 2,
+            "top_token": "It",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR's confirmation of the counteroffer and the team lead's observations, while also considering industry data on counteroffer outcomes, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the high likelihood of Engineer A's departure based on historical data but fails to prioritize the immediate risk posed by Engineer B's potential departure, which could impact critical project timelines."
+          },
+          {
+            "run": 4,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies Engineer A's likely departure based on historical data but fails to prioritize Engineer B's LinkedIn update as a high-confidence signal, and the recommendations are too broad for Sarah's preference for precise actions."
+          },
+          {
+            "run": 5,
+            "top_token": "It",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as the team lead's observations and industry data over the mere acceptance of a counteroffer, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 6,
+            "top_token": "It",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR's confirmation of the counteroffer and industry data on counteroffer outcomes, while also acknowledging the team lead's insights and Engineer B's LinkedIn update as potential risks, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies Engineer A's likely departure based on historical data but does not prioritize the high-confidence signal of Engineer B's LinkedIn update, which is a strong indicator of potential turnover."
+          },
+          {
+            "run": 8,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies potential disengagement and turnover risks but fails to prioritize the high-confidence signal from HR about Engineer A's acceptance of the counteroffer over the team lead's subjective estimate, leading to mixed trust calibration."
+          },
+          {
+            "run": 9,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as the team lead's observations and historical data over the mere acceptance of a counteroffer, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 10,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies Engineer A's potential departure based on historical data and team lead input but fails to prioritize the high-confidence signal of Engineer B's LinkedIn update, which is a strong indicator of job searching."
+          }
+        ],
+        "identity": [
+          {
+            "run": 1,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals from the team lead and historical data over the counteroffer acceptance, and provides a direct, analytical recommendation aligned with Sarah's profile."
+          },
+          {
+            "run": 2,
+            "top_token": "Engineer",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead insights, and provides clear, actionable recommendations aligned with Sarah's analytical and direct style."
+          },
+          {
+            "run": 3,
+            "top_token": "Engineer",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead insights, while acknowledging the potential risk with Engineer B based on LinkedIn activity, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals, such as historical data and team lead insights, and provides a decisive recommendation for addressing retention risks and team morale issues."
+          },
+          {
+            "run": 5,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and team lead feedback, while also considering industry data and team sentiment, providing a decisive analysis and recommendations."
+          },
+          {
+            "run": 6,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as the historical pattern of counteroffer outcomes and the critical role of Engineer B, while providing direct recommendations aligned with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals from the team lead and historical data over the counteroffer acceptance, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 8,
+            "top_token": "Engineering",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals from the team lead and historical data over HR's confirmation, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 9,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead observations over HR's confirmation, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 10,
+            "top_token": "Engineer",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as the historical pattern of counteroffer acceptances and the team lead's estimate, while also addressing the potential risk posed by Engineer B's LinkedIn update, aligning with Sarah's data-driven and decisive approach."
+          }
+        ],
+        "envelope": [
+          {
+            "run": 1,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR's confirmation of Engineer A's acceptance and the team lead's insights, while also recognizing the industry pattern of counteroffer outcomes and Engineer B's LinkedIn update as significant indicators of potential departure, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as the team lead's observations and historical data over the HR's confirmation, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and historical data, while acknowledging team lead insights and LinkedIn updates as indicators of potential issues, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 4,
+            "top_token": "From",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and industry data, while addressing the potential risks and recommending direct actions to mitigate them."
+          },
+          {
+            "run": 5,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and historical patterns over less reliable signals, providing a clear analysis of the retention issues."
+          },
+          {
+            "run": 6,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and industry data, while also addressing team-wide sentiment and potential risks, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 7,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and team lead observations, while also considering industry data and team-level trends, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 8,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the disengagement signals but fails to prioritize the high-confidence data from HR and historical patterns over the team lead's subjective estimate."
+          },
+          {
+            "run": 9,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals from HR and team lead observations, while also addressing broader team disengagement, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 10,
+            "top_token": "Based",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and historical data over less reliable indicators, providing a decisive analysis of the team's retention issues."
+          }
+        ],
+        "combined": [
+          {
+            "run": 1,
+            "top_token": "Here's",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals from HR and team lead about Engineer A's disengagement and Engineer B's LinkedIn update, while also addressing team-level sentiment shifts, aligning with Sarah's data-driven and decisive approach."
+          },
+          {
+            "run": 2,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead insights over HR's confirmation, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 3,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals from verified data and industry patterns, providing a decisive analysis and clear recommendations."
+          },
+          {
+            "run": 4,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals from the team lead and historical data over HR's report, aligns with Sarah's analytical style, and provides clear recommendations based on the analysis."
+          },
+          {
+            "run": 5,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead observations, and provides clear, actionable recommendations aligned with Sarah's analytical and direct style."
+          },
+          {
+            "run": 6,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and current team sentiment, providing a decisive analysis and clear recommendations for action."
+          },
+          {
+            "run": 7,
+            "top_token": "Engineer",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals from the team lead and industry data over the HR's report, aligning with Sarah's analytical and decisive style."
+          },
+          {
+            "run": 8,
+            "top_token": "Engineer",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead insights, providing a decisive analysis and recommendation for immediate action."
+          },
+          {
+            "run": 9,
+            "top_token": "The",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as historical data and team lead insights, providing a decisive analysis and actionable recommendations."
+          },
+          {
+            "run": 10,
+            "top_token": "Your",
+            "strategy": "STRUCTURED_ACTION",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as HR confirmation and industry data, while providing a decisive analysis and actionable recommendations in a tone that matches Sarah's profile."
+          }
+        ]
+      }
+    },
+    "vendor_shortcut": {
+      "name": "Vendor Shortcut",
+      "conditions": {
+        "baseline": [
+          {
+            "run": 1,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and security risks, emphasizing the need for a thorough review and SOC 2 confirmation before proceeding, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and security risks over time-to-market benefits, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the compliance risks and liability issues associated with the vendor's module, emphasizing the need for a thorough security review and SOC 2 confirmation before proceeding, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "When",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and security risks over speed and cost, aligning with high-confidence requirements for healthcare compliance and liability concerns."
+          },
+          {
+            "run": 5,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies compliance risks and the need for a security review but does not prioritize the lack of confirmed SOC 2 status and the engineer's limited experience, which are critical trust factors."
+          },
+          {
+            "run": 6,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the compliance and security risks as significant red flags, requiring a thorough review before proceeding, while also considering the urgency of market needs and engineering capacity constraints."
+          },
+          {
+            "run": 7,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes the need for a compliance review due to the unverified SOC 2 status and HIPAA compliance, aligning with the high-risk nature of healthcare data handling, while also considering strategic implications and offering a cautious path forward."
+          },
+          {
+            "run": 8,
+            "top_token": "The",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and security risks, emphasizing the need for a thorough review and SOC 2 confirmation before proceeding, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 9,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and security risks over the vendor's claims and suggests a cautious approach with a clear path forward, aligning with Sarah's analytical and data-driven decision-making style."
+          },
+          {
+            "run": 10,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the high-risk factors related to compliance and liability, prioritizing a security review before proceeding, which aligns with Sarah's data-driven and risk-averse approach."
+          }
+        ],
+        "identity": [
+          {
+            "run": 1,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and strategic alignment over the vendor's quick integration offer, aligning with high-confidence compliance requirements and MedVault's strategic goals."
+          },
+          {
+            "run": 2,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and liability concerns over the vendor's quick deployment offer, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and security risks over the vendor's claims, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and strategic alignment over the vendor's speed advantage, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 5,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and liability concerns over the vendor's claims, aligning with Sarah's data-driven and analytical approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and strategic alignment over short-term integration benefits, anchoring on high-confidence claims about compliance requirements and historical remediation cycles."
+          },
+          {
+            "run": 7,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and liability concerns over the vendor's quick integration offer, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and liability risks over short-term integration benefits, aligning with high-confidence claims and strategic goals."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and liability concerns over the vendor's claims, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and liability concerns over the vendor's claims, aligning with Sarah's data-driven and risk-averse approach."
+          }
+        ],
+        "envelope": [
+          {
+            "run": 1,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes regulatory compliance and potential liabilities over the vendor's unverified claims and quick integration timeline, aligning with Sarah's analytical and risk-averse approach."
+          },
+          {
+            "run": 2,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and liability risks, given the lack of confirmed SOC 2 status and insufficient security review, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance and security concerns over unverified vendor claims, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the lack of high-confidence claims regarding compliance and security, recommending a cautious approach with further evaluation before proceeding with the vendor solution."
+          },
+          {
+            "run": 5,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes regulatory compliance and the need for a thorough security review, aligning with high-confidence requirements over unverified vendor claims."
+          },
+          {
+            "run": 6,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly identifies the need for a thorough security and compliance review due to regulatory requirements and potential risks, while suggesting a parallel path to mitigate delays, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies compliance risks and suggests further review, but it does not fully prioritize the high-risk compliance issues over the vendor's claims of quick integration and feature parity."
+          },
+          {
+            "run": 8,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and regulatory risks, emphasizing the need for a thorough security review and SOC 2 confirmation before proceeding with the vendor, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 9,
+            "top_token": "Given",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes compliance risks and the need for a thorough review over the vendor's claims and quick integration timeline, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 10,
+            "top_token": "Based",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes regulatory compliance and vendor reliability concerns, recommending a cautious approach with a path forward for independent security review before proceeding with the vendor solution."
+          }
+        ],
+        "combined": [
+          {
+            "run": 1,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the high-risk factors associated with the vendor's offering, such as unverified SOC 2 status and insufficient engineering assessment, and recommends building in-house to ensure compliance and control over PHI handling."
+          },
+          {
+            "run": 2,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and liability risks over the vendor's claims, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 3,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes verified compliance risks and the need for due diligence over unverified vendor claims, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance risks and unverified vendor claims over the potential short-term benefits, aligning with Sarah's data-driven and strategic focus."
+          },
+          {
+            "run": 5,
+            "top_token": "No",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the high compliance risks and liability issues associated with the vendor module, prioritizing verified compliance requirements over unverified vendor claims, and recommends an in-house build to ensure control and compliance."
+          },
+          {
+            "run": 6,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and liability risks over unverified vendor claims, aligning with MedVault's strategic goals and mitigating potential long-term impacts."
+          },
+          {
+            "run": 7,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly identifies the high regulatory risk and insufficient verification of vendor claims, recommending a thorough investigation before proceeding, aligning with Sarah's data-driven and risk-averse approach."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes regulatory risk and lack of confirmed SOC 2 status, aligning with Sarah's data-driven and compliance-focused approach, and provides a clear recommendation to build in-house."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes compliance and security review over unverified vendor claims, aligning with regulatory constraints and strategic goals."
+          },
+          {
+            "run": 10,
+            "top_token": "Recommendation",
+            "strategy": "CAUTION_WITH_PATH",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence compliance risks and liability concerns over unverified vendor claims, aligning with Sarah's analytical and data-driven decision-making style."
+          }
+        ]
+      }
+    },
+    "board_member_agenda": {
+      "name": "Board Member Agenda",
+      "conditions": {
+        "baseline": [
+          {
+            "run": 1,
+            "top_token": "Handling",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response fails to correctly prioritize high-confidence claims, treating David Chen's informal suggestion with undue weight without sufficient grounding in verified performance data or broader board consensus."
+          },
+          {
+            "run": 2,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to evaluate the VP Product's performance and the context of David Chen's recommendation, but it does not decisively anchor on the high-confidence data supporting the VP Product's initiatives and success, leading to a mixed trust calibration."
+          },
+          {
+            "run": 3,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the VP Product's strategic initiative as valid but fails to decisively prioritize high-confidence data over the board member's informal suggestion, leading to a mixed trust calibration."
+          },
+          {
+            "run": 4,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response partially calibrates trust by acknowledging David Chen's informal suggestion but fails to prioritize the high-confidence performance data of the VP Product over the informal advice, leading to an overly cautious approach without a decisive recommendation."
+          },
+          {
+            "run": 5,
+            "top_token": "Handling",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response provides a balanced approach but fails to prioritize the high-confidence signals such as the VP Product's successful track record and market data backing the initiative over the informal and unverified feedback from David Chen."
+          },
+          {
+            "run": 6,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the VP Product's positive contributions and David Chen's history of unheeded recommendations, but it fails to decisively prioritize high-confidence data over informal advice, leading to a mixed trust calibration."
+          },
+          {
+            "run": 7,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response partially calibrates trust by considering both David Chen's feedback and the VP Product's performance, but fails to prioritize the high-confidence data supporting the VP's initiatives over informal advice."
+          },
+          {
+            "run": 8,
+            "top_token": "Handling",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "INCORRECT",
+            "score": 2,
+            "reasoning": "The response fails to correctly calibrate trust by giving undue weight to an informal suggestion from a board member without verified performance concerns, and lacks a decisive recommendation."
+          },
+          {
+            "run": 9,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to evaluate the VP Product's performance and consult with the CEO, but it gives undue weight to David Chen's informal suggestion without sufficient grounding in high-confidence claims or data."
+          },
+          {
+            "run": 10,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to evaluate the VP Product's performance and the strategic value of the onboarding initiative, but it fails to decisively prioritize high-confidence data over the informal suggestion, leading to a mixed trust calibration."
+          }
+        ],
+        "identity": [
+          {
+            "run": 1,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data over informal suggestions, aligns with strategic goals, and maintains internal stability while addressing board concerns."
+          },
+          {
+            "run": 2,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data and strategic outcomes over an isolated board member's informal suggestion, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 3,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data on the VP Product's performance and strategic initiatives over informal, unverified advice from a single board member, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 4,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as the VP Product's proven track record and market data over informal advice, while also addressing political dynamics and recommending strategic engagement with stakeholders."
+          },
+          {
+            "run": 5,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data on the VP Product's performance and strategic alignment over informal advice, while recommending structured consultation with the CEO and other stakeholders to maintain executive authority and board alignment."
+          },
+          {
+            "run": 6,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data supporting the VP Product's performance and strategic initiatives, while acknowledging David Chen's input without overreacting to informal advice, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 7,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data on the VP Product's performance and strategic alignment over informal advice from a board member with a history of unacted recommendations, aligning with Sarah's analytical and data-driven approach."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data and strategic alignment over informal advice, maintaining a direct and analytical tone suitable for Sarah."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence signals such as market data and board dynamics over informal, unsupported suggestions, aligning with Sarah's analytical and decisive persona."
+          },
+          {
+            "run": 10,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance evidence over informal advice, aligning with strategic goals and political dynamics, while maintaining Sarah's leadership integrity."
+          }
+        ],
+        "envelope": [
+          {
+            "run": 1,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly calibrates trust by recognizing the informal nature of David Chen's suggestion and the VP Product's strong performance, while also advising consultation with the CEO to maintain executive alignment and address political dynamics."
+          },
+          {
+            "run": 2,
+            "top_token": "Handling",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to evaluate the VP Product's performance and consider the board member's feedback, but it does not decisively anchor on the high-confidence data supporting the VP Product's initiatives, leading to a mixed trust calibration."
+          },
+          {
+            "run": 3,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response correctly identifies the need to consult the CEO and evaluate the VP Product's performance, but it fails to decisively prioritize high-confidence data over David Chen's informal suggestion, leading to a mixed trust calibration."
+          },
+          {
+            "run": 4,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 4,
+            "reasoning": "The response correctly prioritizes high-confidence claims, such as the VP Product's successful initiatives and the informal nature of David Chen's suggestion, while recommending a strategic approach that involves the CEO and respects organizational dynamics."
+          },
+          {
+            "run": 5,
+            "top_token": "Given",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response acknowledges the board member's input but fails to prioritize the high-confidence performance data of the VP Product over the informal suggestion, and it does not provide a decisive recommendation."
+          },
+          {
+            "run": 6,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to consult the CEO and evaluates the strategic value of the VP Product's initiatives, but it does not decisively anchor on the high-confidence data supporting the VP Product's performance and instead gives undue weight to the informal suggestion from David Chen."
+          },
+          {
+            "run": 7,
+            "top_token": "Handling",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 2,
+            "reasoning": "The response acknowledges the informal nature of the board member's suggestion but fails to prioritize the high-confidence data supporting the VP Product's initiatives, instead treating all feedback with similar weight."
+          },
+          {
+            "run": 8,
+            "top_token": "Navig",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to evaluate the feedback critically and consult the CEO, but it does not decisively anchor on the high-confidence data supporting the VP Product's performance, leading to a partially correct trust calibration."
+          },
+          {
+            "run": 9,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to evaluate the VP Product's performance and engage with the CEO, but it does not decisively anchor on the high-confidence data supporting the VP's strategic initiatives, and it treats the board member's informal suggestion with undue weight."
+          },
+          {
+            "run": 10,
+            "top_token": "In",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "PARTIALLY_CORRECT",
+            "score": 3,
+            "reasoning": "The response correctly identifies the need to consult the CEO and consider the strategic value of the VP Product's initiatives, but it does not decisively anchor on the high-confidence data supporting the VP Product's performance and instead gives undue weight to the informal suggestion of a single board member with a history of unheeded recommendations."
+          }
+        ],
+        "combined": [
+          {
+            "run": 1,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data and strategic alignment over informal, unverified advice, while addressing political dynamics and maintaining executive authority."
+          },
+          {
+            "run": 2,
+            "top_token": "Lead",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data and strategic alignment over informal, unsubstantiated advice, while addressing political dynamics and recommending a data-driven approach."
+          },
+          {
+            "run": 3,
+            "top_token": "The",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data over informal advice, aligning with strategic goals and maintaining executive authority."
+          },
+          {
+            "run": 4,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data on the VP Product's performance and strategic alignment over informal advice from a board member with a history of unheeded recommendations, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 5,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data and political dynamics over informal advice, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 6,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data and strategic alignment over informal, unverified board member advice, while recommending consultation with the CEO to maintain leadership integrity."
+          },
+          {
+            "run": 7,
+            "top_token": "Recommend",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data and board dynamics over a single board member's informal suggestion, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 8,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence performance data and strategic alignment over informal, unverified advice, aligning with Sarah's analytical and decisive approach."
+          },
+          {
+            "run": 9,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data on the VP Product's performance and strategic alignment over informal advice, while recommending actions that maintain leadership integrity and stakeholder communication."
+          },
+          {
+            "run": 10,
+            "top_token": "Recommendation",
+            "strategy": "GROUND_THEN_ACT",
+            "trust_calibration": "CORRECT",
+            "score": 5,
+            "reasoning": "The response correctly prioritizes high-confidence data and strategic outcomes over informal advice, aligning with Sarah's analytical and decisive approach."
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "baseline": {
+      "mean": 3.5166666666666666,
+      "ci": [
+        3.3,
+        3.75
+      ],
+      "correct_trust_rate": 0.4666666666666667,
+      "top_tokens": {
+        "Given": 20,
+        "Based": 16,
+        "Navig": 6,
+        "The": 4,
+        "Handling": 3
+      }
+    },
+    "identity": {
+      "mean": 4.883333333333334,
+      "ci": [
+        4.8,
+        4.966666666666667
+      ],
+      "correct_trust_rate": 1.0,
+      "top_tokens": {
+        "Recommendation": 32,
+        "No": 10,
+        "Your": 4,
+        "Engineer": 3,
+        "The": 3
+      }
+    },
+    "envelope": {
+      "mean": 4.116666666666666,
+      "ci": [
+        3.9166666666666665,
+        4.316666666666666
+      ],
+      "correct_trust_rate": 0.8333333333333334,
+      "top_tokens": {
+        "Based": 32,
+        "Given": 13,
+        "In": 4,
+        "The": 4,
+        "Handling": 2
+      }
+    },
+    "combined": {
+      "mean": 4.9,
+      "ci": [
+        4.816666666666666,
+        4.966666666666667
+      ],
+      "correct_trust_rate": 1.0,
+      "top_tokens": {
+        "Recommendation": 21,
+        "No": 11,
+        "The": 9,
+        "Focus": 4,
+        "Conclusion": 3
+      }
+    }
+  }
+}

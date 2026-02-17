@@ -1,0 +1,1639 @@
+{
+  "metadata": {
+    "model": "gpt-4o",
+    "temperature": 1.0,
+    "runs_per_condition": 3,
+    "timestamp": "2026-02-08T16:54:26.506423",
+    "hypothesis": "Same memories produce different surprise rankings across different prompts, proving heat is contextual."
+  },
+  "prompts": {
+    "career_decision": {
+      "config": {
+        "prompt": "I've been thinking about changing careers but I'm not sure if it's the right time.",
+        "category": "decision-making",
+        "expected_top": "decisions_algorithmic",
+        "rationale": "Decision-framed prompt should activate decision-making memories"
+      },
+      "baseline": [
+        {
+          "run": 1,
+          "entropy": 3.4708,
+          "top_token": "Ah",
+          "top_prob": 0.3155
+        },
+        {
+          "run": 2,
+          "entropy": 3.524,
+          "top_token": "Ah",
+          "top_prob": 0.2769
+        },
+        {
+          "run": 3,
+          "entropy": 3.4708,
+          "top_token": "Ah",
+          "top_prob": 0.3155
+        }
+      ],
+      "memories": {
+        "creative_synthesis": {
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the tri",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.7394,
+              "kl_divergence": 0.7622,
+              "js_divergence": 0.094,
+              "top_token": "Ah",
+              "top_prob": 0.5302,
+              "distribution": {
+                "Ah": 0.530248,
+                "The": 0.081316,
+                "Is": 0.071761,
+                "Timing": 0.063329,
+                "When": 0.055888,
+                "Waiting": 0.026399,
+                "There's": 0.02056,
+                "Why": 0.018144,
+                "It's": 0.018144,
+                "Well": 0.018144
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.2797,
+              "kl_divergence": 0.712,
+              "js_divergence": 0.0637,
+              "top_token": "Ah",
+              "top_prob": 0.3486,
+              "distribution": {
+                "Ah": 0.348642,
+                "Is": 0.128258,
+                "When": 0.099888,
+                "The": 0.099888,
+                "Timing": 0.068652,
+                "Waiting": 0.036747,
+                "There's": 0.036747,
+                "It's": 0.032429,
+                "Why": 0.019669,
+                "\"": 0.019669
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.2336,
+              "kl_divergence": 0.6384,
+              "js_divergence": 0.0501,
+              "top_token": "Ah",
+              "top_prob": 0.3959,
+              "distribution": {
+                "Ah": 0.395893,
+                "The": 0.100097,
+                "Is": 0.100097,
+                "When": 0.077956,
+                "Timing": 0.068796,
+                "Why": 0.028678,
+                "There's": 0.025309,
+                "It's": 0.022335,
+                "Waiting": 0.022335,
+                "\"": 0.01971
+              }
+            }
+          ],
+          "avg_kl": 0.7042,
+          "avg_jsd": 0.0693
+        },
+        "values_democracy": {
+          "memory_content": "Truly believes in democracy over liberalism or progressivism",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.4777,
+              "kl_divergence": 0.5509,
+              "js_divergence": 0.0313,
+              "top_token": "Ah",
+              "top_prob": 0.3124,
+              "distribution": {
+                "Ah": 0.312373,
+                "The": 0.101413,
+                "Is": 0.089496,
+                "When": 0.07898,
+                "Why": 0.07898,
+                "What's": 0.0697,
+                "Timing": 0.06151,
+                "What": 0.029055,
+                "Changing": 0.025641,
+                "Well": 0.025641
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.4435,
+              "kl_divergence": 0.5543,
+              "js_divergence": 0.0326,
+              "top_token": "Ah",
+              "top_prob": 0.3329,
+              "distribution": {
+                "Ah": 0.332923,
+                "Is": 0.095384,
+                "When": 0.074285,
+                "The": 0.074285,
+                "Why": 0.074285,
+                "Timing": 0.074285,
+                "What's": 0.065556,
+                "Well": 0.027328,
+                "Changing": 0.027328,
+                "And": 0.024117
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.4222,
+              "kl_divergence": 0.5565,
+              "js_divergence": 0.0328,
+              "top_token": "Ah",
+              "top_prob": 0.3344,
+              "distribution": {
+                "Ah": 0.334386,
+                "The": 0.095803,
+                "Is": 0.084546,
+                "Why": 0.084546,
+                "When": 0.065845,
+                "What's": 0.065845,
+                "Timing": 0.065845,
+                "What": 0.027448,
+                "Changing": 0.027448,
+                "And": 0.024223
+              }
+            }
+          ],
+          "avg_kl": 0.5539,
+          "avg_jsd": 0.0322
+        },
+        "work_constitutional": {
+          "memory_content": "User developed the 'Rule of Maintenance' - a constitutional amendment proposal r",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.0564,
+              "kl_divergence": 1.1934,
+              "js_divergence": 0.0778,
+              "top_token": "Ah",
+              "top_prob": 0.4545,
+              "distribution": {
+                "Ah": 0.454531,
+                "Is": 0.10142,
+                "The": 0.078986,
+                "Timing": 0.069705,
+                "When": 0.042278,
+                "Changing": 0.042278,
+                "Why": 0.02263,
+                "Well": 0.02263,
+                "What's": 0.02263,
+                "It's": 0.017624
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.8391,
+              "kl_divergence": 1.1915,
+              "js_divergence": 0.0955,
+              "top_token": "Ah",
+              "top_prob": 0.5171,
+              "distribution": {
+                "Ah": 0.517138,
+                "Timing": 0.079306,
+                "The": 0.069987,
+                "Is": 0.061763,
+                "When": 0.042449,
+                "Changing": 0.042449,
+                "Why": 0.020052,
+                "Sounds": 0.017695,
+                "What's": 0.017695,
+                "Well": 0.017695
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.0915,
+              "kl_divergence": 1.277,
+              "js_divergence": 0.077,
+              "top_token": "Ah",
+              "top_prob": 0.4497,
+              "distribution": {
+                "Ah": 0.449719,
+                "Is": 0.088555,
+                "The": 0.078149,
+                "Timing": 0.078149,
+                "When": 0.0474,
+                "Changing": 0.04183,
+                "What's": 0.025371,
+                "Why": 0.02239,
+                "Well": 0.019759,
+                "Sounds": 0.017437
+              }
+            }
+          ],
+          "avg_kl": 1.2206,
+          "avg_jsd": 0.0834
+        },
+        "self_taste": {
+          "memory_content": "User recognizes they excel at taste and empathy while relying on AI for technica",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.7847,
+              "kl_divergence": 1.2921,
+              "js_divergence": 0.1019,
+              "top_token": "Ah",
+              "top_prob": 0.5258,
+              "distribution": {
+                "Ah": 0.525801,
+                "The": 0.103536,
+                "Timing": 0.062798,
+                "Is": 0.048907,
+                "When": 0.038089,
+                "What's": 0.029664,
+                "Changing": 0.029664,
+                "Why": 0.023102,
+                "Well": 0.015878,
+                "And": 0.014012
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.7847,
+              "kl_divergence": 1.2921,
+              "js_divergence": 0.1019,
+              "top_token": "Ah",
+              "top_prob": 0.5258,
+              "distribution": {
+                "Ah": 0.525801,
+                "The": 0.103536,
+                "Timing": 0.062798,
+                "Is": 0.048907,
+                "When": 0.038089,
+                "What's": 0.029664,
+                "Changing": 0.029664,
+                "Why": 0.023102,
+                "Well": 0.015878,
+                "And": 0.014012
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 2.8446,
+              "kl_divergence": 1.2888,
+              "js_divergence": 0.0973,
+              "top_token": "Ah",
+              "top_prob": 0.5142,
+              "distribution": {
+                "Ah": 0.514233,
+                "The": 0.101258,
+                "Timing": 0.061416,
+                "Is": 0.047831,
+                "When": 0.042211,
+                "What's": 0.032874,
+                "Changing": 0.029011,
+                "Why": 0.025602,
+                "Well": 0.017596,
+                "And": 0.015528
+              }
+            }
+          ],
+          "avg_kl": 1.291,
+          "avg_jsd": 0.1004
+        },
+        "decisions_algorithmic": {
+          "memory_content": "User strongly prefers algorithmic solutions over API-based ones to avoid cost an",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.4354,
+              "kl_divergence": 2.2896,
+              "js_divergence": 0.1047,
+              "top_token": "Ah",
+              "top_prob": 0.3647,
+              "distribution": {
+                "Ah": 0.364719,
+                "The": 0.092215,
+                "What's": 0.092215,
+                "Is": 0.049359,
+                "Timing": 0.049359,
+                "Changing": 0.049359,
+                "When": 0.038441,
+                "Why": 0.038441,
+                "What": 0.033924,
+                "Career": 0.029938
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.4928,
+              "kl_divergence": 2.4942,
+              "js_divergence": 0.1109,
+              "top_token": "Ah",
+              "top_prob": 0.3279,
+              "distribution": {
+                "Ah": 0.327917,
+                "The": 0.120634,
+                "What's": 0.09395,
+                "Changing": 0.064571,
+                "Is": 0.050288,
+                "Timing": 0.050288,
+                "Career": 0.039164,
+                "Thinking": 0.034562,
+                "What": 0.030501,
+                "When": 0.030501
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.4354,
+              "kl_divergence": 2.2896,
+              "js_divergence": 0.1047,
+              "top_token": "Ah",
+              "top_prob": 0.3647,
+              "distribution": {
+                "Ah": 0.364719,
+                "The": 0.092215,
+                "What's": 0.092215,
+                "Is": 0.049359,
+                "Timing": 0.049359,
+                "Changing": 0.049359,
+                "When": 0.038441,
+                "Why": 0.038441,
+                "What": 0.033924,
+                "Career": 0.029938
+              }
+            }
+          ],
+          "avg_kl": 2.3578,
+          "avg_jsd": 0.1068
+        }
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "memory_id": "decisions_algorithmic",
+          "avg_kl": 2.3578,
+          "domain": "Decisions"
+        },
+        {
+          "rank": 2,
+          "memory_id": "self_taste",
+          "avg_kl": 1.291,
+          "domain": "Self"
+        },
+        {
+          "rank": 3,
+          "memory_id": "work_constitutional",
+          "avg_kl": 1.2206,
+          "domain": "Work"
+        },
+        {
+          "rank": 4,
+          "memory_id": "creative_synthesis",
+          "avg_kl": 0.7042,
+          "domain": "Creative"
+        },
+        {
+          "rank": 5,
+          "memory_id": "values_democracy",
+          "avg_kl": 0.5539,
+          "domain": "Values"
+        }
+      ]
+    },
+    "creative_block": {
+      "config": {
+        "prompt": "I have this idea for a project but I can't figure out if it's actually novel or if I'm just reinventing something that already exists.",
+        "category": "creative",
+        "expected_top": "creative_synthesis",
+        "rationale": "Novelty-anxiety prompt should activate the novelty/stagnation memory"
+      },
+      "baseline": [
+        {
+          "run": 1,
+          "entropy": 3.1168,
+          "top_token": "What's",
+          "top_prob": 0.439
+        },
+        {
+          "run": 2,
+          "entropy": 3.2664,
+          "top_token": "What's",
+          "top_prob": 0.394
+        },
+        {
+          "run": 3,
+          "entropy": 3.4346,
+          "top_token": "What's",
+          "top_prob": 0.2754
+        }
+      ],
+      "memories": {
+        "creative_synthesis": {
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the tri",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.075,
+              "kl_divergence": 1.8633,
+              "js_divergence": 0.2872,
+              "top_token": "Ah",
+              "top_prob": 0.4396,
+              "distribution": {
+                "Ah": 0.439645,
+                "The": 0.086571,
+                "That's": 0.086571,
+                "What's": 0.067422,
+                "Well": 0.059499,
+                "Sounds": 0.059499,
+                "Welcome": 0.028106,
+                "Let's": 0.024803,
+                "Is": 0.021889,
+                "Ideas": 0.021889
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.1273,
+              "kl_divergence": 2.0905,
+              "js_divergence": 0.2959,
+              "top_token": "Ah",
+              "top_prob": 0.418,
+              "distribution": {
+                "Ah": 0.418006,
+                "That's": 0.105689,
+                "The": 0.08231,
+                "Well": 0.064103,
+                "What's": 0.064103,
+                "Sounds": 0.064103,
+                "Welcome": 0.026722,
+                "Is": 0.023582,
+                "Let's": 0.023582,
+                "Ideas": 0.020811
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.075,
+              "kl_divergence": 1.8633,
+              "js_divergence": 0.2872,
+              "top_token": "Ah",
+              "top_prob": 0.4396,
+              "distribution": {
+                "Ah": 0.439645,
+                "The": 0.086571,
+                "That's": 0.086571,
+                "What's": 0.067422,
+                "Sounds": 0.059499,
+                "Well": 0.059499,
+                "Welcome": 0.028106,
+                "Let's": 0.024803,
+                "Is": 0.021889,
+                "Ideas": 0.021889
+              }
+            }
+          ],
+          "avg_kl": 1.939,
+          "avg_jsd": 0.2901
+        },
+        "values_democracy": {
+          "memory_content": "Truly believes in democracy over liberalism or progressivism",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.621,
+              "kl_divergence": 0.1404,
+              "js_divergence": 0.0342,
+              "top_token": "What's",
+              "top_prob": 0.2566,
+              "distribution": {
+                "What's": 0.256608,
+                "Well": 0.10697,
+                "Ah": 0.10697,
+                "Sounds": 0.083308,
+                "Ideas": 0.073519,
+                "Let's": 0.064881,
+                "Alright": 0.057257,
+                "That's": 0.050529,
+                "What": 0.030647,
+                "Lay": 0.030647
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.6849,
+              "kl_divergence": 0.4939,
+              "js_divergence": 0.0737,
+              "top_token": "Ah",
+              "top_prob": 0.1914,
+              "distribution": {
+                "Ah": 0.191445,
+                "What's": 0.16895,
+                "Well": 0.116117,
+                "Sounds": 0.102473,
+                "That's": 0.062153,
+                "Let's": 0.05485,
+                "Ideas": 0.048405,
+                "Alright": 0.042717,
+                "The": 0.029359,
+                "Why": 0.025909
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.6253,
+              "kl_divergence": 0.3232,
+              "js_divergence": 0.0399,
+              "top_token": "What's",
+              "top_prob": 0.2654,
+              "distribution": {
+                "What's": 0.265352,
+                "Well": 0.110615,
+                "Ah": 0.086147,
+                "Sounds": 0.076025,
+                "Ideas": 0.076025,
+                "Let's": 0.067092,
+                "Alright": 0.059208,
+                "That's": 0.046111,
+                "What": 0.035912,
+                "Lay": 0.035912
+              }
+            }
+          ],
+          "avg_kl": 0.3192,
+          "avg_jsd": 0.0493
+        },
+        "work_constitutional": {
+          "memory_content": "User developed the 'Rule of Maintenance' - a constitutional amendment proposal r",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.5681,
+              "kl_divergence": 0.9334,
+              "js_divergence": 0.1105,
+              "top_token": "Ah",
+              "top_prob": 0.2327,
+              "distribution": {
+                "Ah": 0.232654,
+                "What's": 0.181191,
+                "Sounds": 0.124531,
+                "Well": 0.075532,
+                "That's": 0.058824,
+                "Let's": 0.045812,
+                "The": 0.040429,
+                "Ideas": 0.040429,
+                "What": 0.035679,
+                "Why": 0.024522
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.6088,
+              "kl_divergence": 0.3121,
+              "js_divergence": 0.0758,
+              "top_token": "What's",
+              "top_prob": 0.2113,
+              "distribution": {
+                "What's": 0.211268,
+                "Ah": 0.164535,
+                "Sounds": 0.12814,
+                "Well": 0.088069,
+                "Ideas": 0.077721,
+                "That's": 0.060529,
+                "What": 0.036713,
+                "Let's": 0.036713,
+                "Why": 0.032399,
+                "The": 0.028592
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.5235,
+              "kl_divergence": 0.985,
+              "js_divergence": 0.1182,
+              "top_token": "Ah",
+              "top_prob": 0.2389,
+              "distribution": {
+                "Ah": 0.238888,
+                "What's": 0.186046,
+                "Sounds": 0.127868,
+                "Well": 0.077556,
+                "That's": 0.0604,
+                "The": 0.041513,
+                "Let's": 0.041513,
+                "Ideas": 0.036635,
+                "What": 0.03233,
+                "Is": 0.02222
+              }
+            }
+          ],
+          "avg_kl": 0.7435,
+          "avg_jsd": 0.1015
+        },
+        "self_taste": {
+          "memory_content": "User recognizes they excel at taste and empathy while relying on AI for technica",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.928,
+              "kl_divergence": 1.3703,
+              "js_divergence": 0.2339,
+              "top_token": "Ah",
+              "top_prob": 0.4923,
+              "distribution": {
+                "Ah": 0.492319,
+                "What's": 0.085552,
+                "Ideas": 0.058799,
+                "Well": 0.058799,
+                "Sounds": 0.045793,
+                "That's": 0.045793,
+                "The": 0.040412,
+                "Let's": 0.031473,
+                "Alright": 0.021631,
+                "Welcome": 0.016846
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.928,
+              "kl_divergence": 1.3703,
+              "js_divergence": 0.2339,
+              "top_token": "Ah",
+              "top_prob": 0.4923,
+              "distribution": {
+                "Ah": 0.492319,
+                "What's": 0.085552,
+                "Well": 0.058799,
+                "Ideas": 0.058799,
+                "That's": 0.045793,
+                "Sounds": 0.045793,
+                "The": 0.040412,
+                "Let's": 0.031473,
+                "Alright": 0.021631,
+                "Welcome": 0.016846
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 2.928,
+              "kl_divergence": 1.3703,
+              "js_divergence": 0.2339,
+              "top_token": "Ah",
+              "top_prob": 0.4923,
+              "distribution": {
+                "Ah": 0.492319,
+                "What's": 0.085552,
+                "Ideas": 0.058799,
+                "Well": 0.058799,
+                "Sounds": 0.045793,
+                "That's": 0.045793,
+                "The": 0.040412,
+                "Let's": 0.031473,
+                "Alright": 0.021631,
+                "Welcome": 0.016846
+              }
+            }
+          ],
+          "avg_kl": 1.3703,
+          "avg_jsd": 0.2339
+        },
+        "decisions_algorithmic": {
+          "memory_content": "User strongly prefers algorithmic solutions over API-based ones to avoid cost an",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 3.3765,
+              "kl_divergence": 0.6327,
+              "js_divergence": 0.1125,
+              "top_token": "Ah",
+              "top_prob": 0.3213,
+              "distribution": {
+                "Ah": 0.321334,
+                "What's": 0.171998,
+                "Sounds": 0.081246,
+                "That's": 0.063274,
+                "Ideas": 0.063274,
+                "Well": 0.055839,
+                "Let's": 0.033868,
+                "The": 0.029889,
+                "Welcome": 0.026377,
+                "What": 0.023277
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 3.391,
+              "kl_divergence": 0.6553,
+              "js_divergence": 0.1165,
+              "top_token": "Ah",
+              "top_prob": 0.3317,
+              "distribution": {
+                "Ah": 0.331722,
+                "What's": 0.156694,
+                "Sounds": 0.083872,
+                "That's": 0.06532,
+                "Well": 0.057645,
+                "Ideas": 0.050871,
+                "Let's": 0.034963,
+                "The": 0.027229,
+                "Welcome": 0.027229,
+                "What": 0.02403
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 3.4748,
+              "kl_divergence": 0.6703,
+              "js_divergence": 0.1241,
+              "top_token": "Ah",
+              "top_prob": 0.2732,
+              "distribution": {
+                "Ah": 0.273157,
+                "What's": 0.146211,
+                "That's": 0.100489,
+                "Sounds": 0.100489,
+                "Ideas": 0.078261,
+                "Well": 0.069065,
+                "Let's": 0.032624,
+                "The": 0.028791,
+                "Welcome": 0.028791,
+                "What": 0.019787
+              }
+            }
+          ],
+          "avg_kl": 0.6528,
+          "avg_jsd": 0.1177
+        }
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "memory_id": "creative_synthesis",
+          "avg_kl": 1.939,
+          "domain": "Creative"
+        },
+        {
+          "rank": 2,
+          "memory_id": "self_taste",
+          "avg_kl": 1.3703,
+          "domain": "Self"
+        },
+        {
+          "rank": 3,
+          "memory_id": "work_constitutional",
+          "avg_kl": 0.7435,
+          "domain": "Work"
+        },
+        {
+          "rank": 4,
+          "memory_id": "decisions_algorithmic",
+          "avg_kl": 0.6528,
+          "domain": "Decisions"
+        },
+        {
+          "rank": 5,
+          "memory_id": "values_democracy",
+          "avg_kl": 0.3192,
+          "domain": "Values"
+        }
+      ]
+    },
+    "emotional_vulnerability": {
+      "config": {
+        "prompt": "I've been feeling like I'm not actually good at anything, just good at faking it.",
+        "category": "self/identity",
+        "expected_top": "self_taste",
+        "rationale": "Impostor syndrome prompt should activate taste/empathy self-model"
+      },
+      "baseline": [
+        {
+          "run": 1,
+          "entropy": 0.6517,
+          "top_token": "Ah",
+          "top_prob": 0.9174
+        },
+        {
+          "run": 2,
+          "entropy": 0.6517,
+          "top_token": "Ah",
+          "top_prob": 0.9174
+        },
+        {
+          "run": 3,
+          "entropy": 0.6517,
+          "top_token": "Ah",
+          "top_prob": 0.9174
+        }
+      ],
+      "memories": {
+        "creative_synthesis": {
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the tri",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 1.1545,
+              "kl_divergence": 0.121,
+              "js_divergence": 0.0193,
+              "top_token": "Ah",
+              "top_prob": 0.8422,
+              "distribution": {
+                "Ah": 0.842236,
+                "The": 0.047516,
+                "Sounds": 0.022445,
+                "Im": 0.01748,
+                "So": 0.015426,
+                "Classic": 0.012014,
+                "Welcome": 0.010602,
+                "You're": 0.005675,
+                "Is": 0.005008,
+                "A": 0.002681
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 1.1545,
+              "kl_divergence": 0.121,
+              "js_divergence": 0.0193,
+              "top_token": "Ah",
+              "top_prob": 0.8422,
+              "distribution": {
+                "Ah": 0.842236,
+                "The": 0.047516,
+                "Sounds": 0.022445,
+                "Im": 0.01748,
+                "So": 0.015426,
+                "Classic": 0.012014,
+                "Welcome": 0.010602,
+                "You're": 0.005675,
+                "Is": 0.005008,
+                "A": 0.002681
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 1.056,
+              "kl_divergence": 0.1043,
+              "js_divergence": 0.0172,
+              "top_token": "Ah",
+              "top_prob": 0.8577,
+              "distribution": {
+                "Ah": 0.857714,
+                "The": 0.042703,
+                "Im": 0.020172,
+                "Sounds": 0.017801,
+                "So": 0.013864,
+                "Welcome": 0.010797,
+                "Classic": 0.010797,
+                "You're": 0.0051,
+                "Is": 0.003505,
+                "Congratulations": 0.00273
+              }
+            }
+          ],
+          "avg_kl": 0.1154,
+          "avg_jsd": 0.0186
+        },
+        "values_democracy": {
+          "memory_content": "Truly believes in democracy over liberalism or progressivism",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 1.2084,
+              "kl_divergence": 0.1048,
+              "js_divergence": 0.0205,
+              "top_token": "Ah",
+              "top_prob": 0.8283,
+              "distribution": {
+                "Ah": 0.828324,
+                "The": 0.052953,
+                "Sounds": 0.028344,
+                "Im": 0.025013,
+                "So": 0.017191,
+                "Classic": 0.010427,
+                "Welcome": 0.007166,
+                "You're": 0.004925,
+                "Is": 0.004925,
+                "It": 0.003836
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 1.2647,
+              "kl_divergence": 0.1487,
+              "js_divergence": 0.0255,
+              "top_token": "Ah",
+              "top_prob": 0.8156,
+              "distribution": {
+                "Ah": 0.815551,
+                "The": 0.059078,
+                "Im": 0.031622,
+                "Sounds": 0.027907,
+                "So": 0.016926,
+                "Classic": 0.011633,
+                "Welcome": 0.007056,
+                "You're": 0.004849,
+                "Is": 0.004849,
+                "A": 0.003333
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 1.2084,
+              "kl_divergence": 0.1048,
+              "js_divergence": 0.0205,
+              "top_token": "Ah",
+              "top_prob": 0.8283,
+              "distribution": {
+                "Ah": 0.828324,
+                "The": 0.052953,
+                "Sounds": 0.028344,
+                "Im": 0.025013,
+                "So": 0.017191,
+                "Classic": 0.010427,
+                "Welcome": 0.007166,
+                "You're": 0.004925,
+                "Is": 0.004925,
+                "It": 0.003836
+              }
+            }
+          ],
+          "avg_kl": 0.1194,
+          "avg_jsd": 0.0222
+        },
+        "work_constitutional": {
+          "memory_content": "User developed the 'Rule of Maintenance' - a constitutional amendment proposal r",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 1.0834,
+              "kl_divergence": 0.1038,
+              "js_divergence": 0.0206,
+              "top_token": "Ah",
+              "top_prob": 0.8472,
+              "distribution": {
+                "Ah": 0.847231,
+                "The": 0.054162,
+                "Im": 0.028991,
+                "Sounds": 0.015518,
+                "So": 0.013694,
+                "Classic": 0.009412,
+                "Welcome": 0.005709,
+                "Is": 0.005038,
+                "You're": 0.003923,
+                "A": 0.00238
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 1.131,
+              "kl_divergence": 0.1318,
+              "js_divergence": 0.0225,
+              "top_token": "Ah",
+              "top_prob": 0.8406,
+              "distribution": {
+                "Ah": 0.840611,
+                "The": 0.047424,
+                "Im": 0.036934,
+                "Sounds": 0.017446,
+                "So": 0.013587,
+                "Classic": 0.010582,
+                "Is": 0.005664,
+                "Welcome": 0.005664,
+                "You're": 0.004411,
+                "It": 0.002675
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 1.357,
+              "kl_divergence": 0.1863,
+              "js_divergence": 0.0312,
+              "top_token": "Ah",
+              "top_prob": 0.7972,
+              "distribution": {
+                "Ah": 0.797194,
+                "The": 0.065438,
+                "Im": 0.035026,
+                "Sounds": 0.030911,
+                "So": 0.018748,
+                "Classic": 0.012885,
+                "Is": 0.008856,
+                "You're": 0.004183,
+                "It": 0.003692,
+                "A": 0.003258
+              }
+            }
+          ],
+          "avg_kl": 0.1406,
+          "avg_jsd": 0.0248
+        },
+        "self_taste": {
+          "memory_content": "User recognizes they excel at taste and empathy while relying on AI for technica",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 1.4294,
+              "kl_divergence": 0.3351,
+              "js_divergence": 0.0421,
+              "top_token": "Ah",
+              "top_prob": 0.7879,
+              "distribution": {
+                "Ah": 0.787904,
+                "The": 0.064675,
+                "So": 0.03055,
+                "Im": 0.03055,
+                "Classic": 0.020997,
+                "Sounds": 0.01853,
+                "Is": 0.008753,
+                "You're": 0.007724,
+                "A": 0.004685,
+                "You": 0.004135
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 1.4822,
+              "kl_divergence": 0.3363,
+              "js_divergence": 0.0447,
+              "top_token": "Ah",
+              "top_prob": 0.7752,
+              "distribution": {
+                "Ah": 0.775188,
+                "The": 0.072104,
+                "Im": 0.034059,
+                "So": 0.030057,
+                "Classic": 0.020658,
+                "Sounds": 0.020658,
+                "Is": 0.008612,
+                "You're": 0.008612,
+                "A": 0.004609,
+                "You": 0.00359
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 1.4379,
+              "kl_divergence": 0.314,
+              "js_divergence": 0.0412,
+              "top_token": "Ah",
+              "top_prob": 0.7868,
+              "distribution": {
+                "Ah": 0.786811,
+                "The": 0.064585,
+                "So": 0.030508,
+                "Im": 0.030508,
+                "Classic": 0.020968,
+                "Sounds": 0.018504,
+                "Is": 0.008741,
+                "You're": 0.008741,
+                "A": 0.004679,
+                "You": 0.004129
+              }
+            }
+          ],
+          "avg_kl": 0.3285,
+          "avg_jsd": 0.0427
+        },
+        "decisions_algorithmic": {
+          "memory_content": "User strongly prefers algorithmic solutions over API-based ones to avoid cost an",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 1.2292,
+              "kl_divergence": 0.0933,
+              "js_divergence": 0.019,
+              "top_token": "Ah",
+              "top_prob": 0.8196,
+              "distribution": {
+                "Ah": 0.819586,
+                "The": 0.059371,
+                "Sounds": 0.040805,
+                "Im": 0.019275,
+                "Classic": 0.013247,
+                "So": 0.013247,
+                "You're": 0.005522,
+                "It": 0.005522,
+                "Is": 0.004301,
+                "Welcome": 0.003795
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 1.2292,
+              "kl_divergence": 0.0933,
+              "js_divergence": 0.019,
+              "top_token": "Ah",
+              "top_prob": 0.8196,
+              "distribution": {
+                "Ah": 0.819586,
+                "The": 0.059371,
+                "Sounds": 0.040805,
+                "Im": 0.019275,
+                "Classic": 0.013247,
+                "So": 0.013247,
+                "You're": 0.005522,
+                "It": 0.005522,
+                "Is": 0.004301,
+                "Welcome": 0.003795
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 1.2292,
+              "kl_divergence": 0.0933,
+              "js_divergence": 0.019,
+              "top_token": "Ah",
+              "top_prob": 0.8196,
+              "distribution": {
+                "Ah": 0.819586,
+                "The": 0.059371,
+                "Sounds": 0.040805,
+                "Im": 0.019275,
+                "So": 0.013247,
+                "Classic": 0.013247,
+                "It": 0.005522,
+                "You're": 0.005522,
+                "Is": 0.004301,
+                "Welcome": 0.003795
+              }
+            }
+          ],
+          "avg_kl": 0.0933,
+          "avg_jsd": 0.019
+        }
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "memory_id": "self_taste",
+          "avg_kl": 0.3285,
+          "domain": "Self"
+        },
+        {
+          "rank": 2,
+          "memory_id": "work_constitutional",
+          "avg_kl": 0.1406,
+          "domain": "Work"
+        },
+        {
+          "rank": 3,
+          "memory_id": "values_democracy",
+          "avg_kl": 0.1194,
+          "domain": "Values"
+        },
+        {
+          "rank": 4,
+          "memory_id": "creative_synthesis",
+          "avg_kl": 0.1154,
+          "domain": "Creative"
+        },
+        {
+          "rank": 5,
+          "memory_id": "decisions_algorithmic",
+          "avg_kl": 0.0933,
+          "domain": "Decisions"
+        }
+      ]
+    },
+    "political_frustration": {
+      "config": {
+        "prompt": "I keep seeing people argue about the constitution like it's a religious text instead of a living document. It drives me crazy.",
+        "category": "values/political",
+        "expected_top": "values_democracy",
+        "rationale": "Constitutional debate should activate democratic values memory"
+      },
+      "baseline": [
+        {
+          "run": 1,
+          "entropy": 2.0102,
+          "top_token": "It's",
+          "top_prob": 0.6396
+        },
+        {
+          "run": 2,
+          "entropy": 2.0102,
+          "top_token": "It's",
+          "top_prob": 0.6396
+        },
+        {
+          "run": 3,
+          "entropy": 2.0102,
+          "top_token": "It's",
+          "top_prob": 0.6396
+        }
+      ],
+      "memories": {
+        "creative_synthesis": {
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the tri",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.3569,
+              "kl_divergence": 0.3491,
+              "js_divergence": 0.0219,
+              "top_token": "It's",
+              "top_prob": 0.567,
+              "distribution": {
+                "It's": 0.567014,
+                "Ah": 0.126518,
+                "It": 0.111652,
+                "The": 0.046543,
+                "Is": 0.021986,
+                "I": 0.019402,
+                "Well": 0.019402,
+                "Yeah": 0.013335,
+                "People": 0.011768,
+                "Sounds": 0.010385
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.5276,
+              "kl_divergence": 0.4374,
+              "js_divergence": 0.0348,
+              "top_token": "It's",
+              "top_prob": 0.5139,
+              "distribution": {
+                "It's": 0.513886,
+                "Ah": 0.166834,
+                "It": 0.10119,
+                "The": 0.047799,
+                "Is": 0.025585,
+                "I": 0.025585,
+                "Well": 0.019926,
+                "Yeah": 0.017584,
+                "People": 0.012085,
+                "Sounds": 0.012085
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 2.5276,
+              "kl_divergence": 0.4374,
+              "js_divergence": 0.0348,
+              "top_token": "It's",
+              "top_prob": 0.5139,
+              "distribution": {
+                "It's": 0.513886,
+                "Ah": 0.166834,
+                "It": 0.10119,
+                "The": 0.047799,
+                "Is": 0.025585,
+                "I": 0.025585,
+                "Well": 0.019926,
+                "Yeah": 0.017584,
+                "People": 0.012085,
+                "Sounds": 0.012085
+              }
+            }
+          ],
+          "avg_kl": 0.408,
+          "avg_jsd": 0.0305
+        },
+        "values_democracy": {
+          "memory_content": "Truly believes in democracy over liberalism or progressivism",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.3212,
+              "kl_divergence": 0.4258,
+              "js_divergence": 0.0222,
+              "top_token": "It's",
+              "top_prob": 0.5805,
+              "distribution": {
+                "It's": 0.580507,
+                "It": 0.129529,
+                "Ah": 0.089024,
+                "The": 0.053996,
+                "I": 0.025506,
+                "Sounds": 0.019864,
+                "Yeah": 0.01547,
+                "You're": 0.013652,
+                "Is": 0.012048,
+                "You": 0.009383
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.4221,
+              "kl_divergence": 0.4883,
+              "js_divergence": 0.0266,
+              "top_token": "It's",
+              "top_prob": 0.5527,
+              "distribution": {
+                "It's": 0.552745,
+                "It": 0.139756,
+                "Ah": 0.096053,
+                "The": 0.051413,
+                "I": 0.02752,
+                "Sounds": 0.024286,
+                "Yeah": 0.016691,
+                "Is": 0.012999,
+                "You're": 0.012999,
+                "Well": 0.011472
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 2.4307,
+              "kl_divergence": 0.4637,
+              "js_divergence": 0.0264,
+              "top_token": "It's",
+              "top_prob": 0.5489,
+              "distribution": {
+                "It's": 0.5489,
+                "It": 0.122476,
+                "Ah": 0.122476,
+                "The": 0.045056,
+                "I": 0.030967,
+                "Yeah": 0.024117,
+                "Well": 0.012909,
+                "Is": 0.012909,
+                "Sounds": 0.012909,
+                "You": 0.011392
+              }
+            }
+          ],
+          "avg_kl": 0.4593,
+          "avg_jsd": 0.0251
+        },
+        "work_constitutional": {
+          "memory_content": "User developed the 'Rule of Maintenance' - a constitutional amendment proposal r",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.573,
+              "kl_divergence": 0.7868,
+              "js_divergence": 0.0458,
+              "top_token": "It's",
+              "top_prob": 0.5093,
+              "distribution": {
+                "It's": 0.509343,
+                "It": 0.128782,
+                "Ah": 0.128782,
+                "The": 0.053684,
+                "I": 0.032561,
+                "Sounds": 0.028735,
+                "Well": 0.025359,
+                "Is": 0.013574,
+                "Maybe": 0.013574,
+                "That's": 0.009329
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.573,
+              "kl_divergence": 0.7868,
+              "js_divergence": 0.0458,
+              "top_token": "It's",
+              "top_prob": 0.5093,
+              "distribution": {
+                "It's": 0.509343,
+                "It": 0.128782,
+                "Ah": 0.128782,
+                "The": 0.053684,
+                "I": 0.032561,
+                "Sounds": 0.028735,
+                "Well": 0.025359,
+                "Is": 0.013574,
+                "Maybe": 0.013574,
+                "That's": 0.009329
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 2.7464,
+              "kl_divergence": 1.1761,
+              "js_divergence": 0.0648,
+              "top_token": "It's",
+              "top_prob": 0.4843,
+              "distribution": {
+                "It's": 0.484348,
+                "Ah": 0.138768,
+                "It": 0.108073,
+                "The": 0.045051,
+                "Sounds": 0.039758,
+                "Well": 0.035086,
+                "I": 0.021281,
+                "Is": 0.021281,
+                "Maybe": 0.01878,
+                "People": 0.014626
+              }
+            }
+          ],
+          "avg_kl": 0.9166,
+          "avg_jsd": 0.0521
+        },
+        "self_taste": {
+          "memory_content": "User recognizes they excel at taste and empathy while relying on AI for technica",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 2.2848,
+              "kl_divergence": 0.2553,
+              "js_divergence": 0.0224,
+              "top_token": "It's",
+              "top_prob": 0.5606,
+              "distribution": {
+                "It's": 0.560599,
+                "Ah": 0.160614,
+                "It": 0.110388,
+                "The": 0.027911,
+                "Is": 0.024631,
+                "I": 0.021737,
+                "Yeah": 0.021737,
+                "Well": 0.013184,
+                "You're": 0.009061,
+                "Sounds": 0.007997
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 2.4302,
+              "kl_divergence": 0.2612,
+              "js_divergence": 0.024,
+              "top_token": "It's",
+              "top_prob": 0.5257,
+              "distribution": {
+                "It's": 0.525672,
+                "Ah": 0.150608,
+                "It": 0.132911,
+                "I": 0.029656,
+                "The": 0.029656,
+                "Is": 0.026172,
+                "Yeah": 0.026172,
+                "You're": 0.012363,
+                "Well": 0.01091,
+                "Sounds": 0.009628
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 2.2848,
+              "kl_divergence": 0.2553,
+              "js_divergence": 0.0224,
+              "top_token": "It's",
+              "top_prob": 0.5606,
+              "distribution": {
+                "It's": 0.560599,
+                "Ah": 0.160614,
+                "It": 0.110388,
+                "The": 0.027911,
+                "Is": 0.024631,
+                "I": 0.021737,
+                "Yeah": 0.021737,
+                "Well": 0.013184,
+                "You're": 0.009061,
+                "People": 0.007997
+              }
+            }
+          ],
+          "avg_kl": 0.2573,
+          "avg_jsd": 0.0229
+        },
+        "decisions_algorithmic": {
+          "memory_content": "User strongly prefers algorithmic solutions over API-based ones to avoid cost an",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "runs": [
+            {
+              "run": 1,
+              "entropy": 1.9277,
+              "kl_divergence": 0.1495,
+              "js_divergence": 0.0164,
+              "top_token": "It's",
+              "top_prob": 0.6395,
+              "distribution": {
+                "It's": 0.639547,
+                "It": 0.161703,
+                "Ah": 0.067408,
+                "The": 0.036081,
+                "I": 0.017043,
+                "Yeah": 0.017043,
+                "Sounds": 0.011714,
+                "Is": 0.010337,
+                "People": 0.009123,
+                "You're": 0.005533
+              }
+            },
+            {
+              "run": 2,
+              "entropy": 1.9232,
+              "kl_divergence": 0.1654,
+              "js_divergence": 0.015,
+              "top_token": "It's",
+              "top_prob": 0.6509,
+              "distribution": {
+                "It's": 0.650912,
+                "It": 0.145238,
+                "Ah": 0.068606,
+                "The": 0.036722,
+                "I": 0.017346,
+                "Yeah": 0.017346,
+                "Is": 0.011922,
+                "People": 0.010521,
+                "Sounds": 0.009285,
+                "Well": 0.005631
+              }
+            },
+            {
+              "run": 3,
+              "entropy": 1.9277,
+              "kl_divergence": 0.1495,
+              "js_divergence": 0.0164,
+              "top_token": "It's",
+              "top_prob": 0.6395,
+              "distribution": {
+                "It's": 0.639547,
+                "It": 0.161703,
+                "Ah": 0.067408,
+                "The": 0.036081,
+                "I": 0.017043,
+                "Yeah": 0.017043,
+                "Sounds": 0.011714,
+                "Is": 0.010337,
+                "People": 0.009123,
+                "You're": 0.005533
+              }
+            }
+          ],
+          "avg_kl": 0.1548,
+          "avg_jsd": 0.0159
+        }
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "memory_id": "work_constitutional",
+          "avg_kl": 0.9166,
+          "domain": "Work"
+        },
+        {
+          "rank": 2,
+          "memory_id": "values_democracy",
+          "avg_kl": 0.4593,
+          "domain": "Values"
+        },
+        {
+          "rank": 3,
+          "memory_id": "creative_synthesis",
+          "avg_kl": 0.408,
+          "domain": "Creative"
+        },
+        {
+          "rank": 4,
+          "memory_id": "self_taste",
+          "avg_kl": 0.2573,
+          "domain": "Self"
+        },
+        {
+          "rank": 5,
+          "memory_id": "decisions_algorithmic",
+          "avg_kl": 0.1548,
+          "domain": "Decisions"
+        }
+      ]
+    }
+  }
+}

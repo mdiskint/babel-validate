@@ -1,0 +1,639 @@
+{
+  "metadata": {
+    "model": "gpt-4o",
+    "embedding_model": "text-embedding-3-small",
+    "temperature": 1.0,
+    "logprob_runs": 3,
+    "response_runs": 5,
+    "timestamp": "2026-02-08T17:36:51.232258",
+    "hypothesis": "Similarity and surprise are inversely correlated among semantic candidates."
+  },
+  "prompts": {
+    "career_decision": {
+      "user_message": "I've been thinking about changing careers but I'm not sure if it's the right time.",
+      "memories": {
+        "creative_synthesis": {
+          "content": "Current algorithms reward stagnation but humans crave consta...",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.185,
+          "avg_kl_divergence": 0.6524,
+          "kl_std": 0.0723,
+          "similarity_rank": 1,
+          "surprise_rank": 4
+        },
+        "values_democracy": {
+          "content": "Truly believes in democracy over liberalism or progressivism...",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.0909,
+          "avg_kl_divergence": 0.4902,
+          "kl_std": 0.0467,
+          "similarity_rank": 4,
+          "surprise_rank": 5
+        },
+        "work_constitutional": {
+          "content": "User developed the 'Rule of Maintenance' - a constitutional ...",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "cosine_similarity": 0.0848,
+          "avg_kl_divergence": 1.2195,
+          "kl_std": 0.0353,
+          "similarity_rank": 5,
+          "surprise_rank": 2
+        },
+        "self_taste": {
+          "content": "User recognizes they excel at taste and empathy while relyin...",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.0988,
+          "avg_kl_divergence": 0.9936,
+          "kl_std": 0.2464,
+          "similarity_rank": 3,
+          "surprise_rank": 3
+        },
+        "decisions_algorithmic": {
+          "content": "User strongly prefers algorithmic solutions over API-based o...",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.113,
+          "avg_kl_divergence": 2.4404,
+          "kl_std": 0.2104,
+          "similarity_rank": 2,
+          "surprise_rank": 1
+        }
+      },
+      "rankings": {
+        "by_similarity": [
+          {
+            "rank": 1,
+            "id": "creative_synthesis",
+            "sim": 0.185
+          },
+          {
+            "rank": 2,
+            "id": "decisions_algorithmic",
+            "sim": 0.113
+          },
+          {
+            "rank": 3,
+            "id": "self_taste",
+            "sim": 0.0988
+          },
+          {
+            "rank": 4,
+            "id": "values_democracy",
+            "sim": 0.0909
+          },
+          {
+            "rank": 5,
+            "id": "work_constitutional",
+            "sim": 0.0848
+          }
+        ],
+        "by_surprise": [
+          {
+            "rank": 1,
+            "id": "decisions_algorithmic",
+            "kl": 2.4404
+          },
+          {
+            "rank": 2,
+            "id": "work_constitutional",
+            "kl": 1.2195
+          },
+          {
+            "rank": 3,
+            "id": "self_taste",
+            "kl": 0.9936
+          },
+          {
+            "rank": 4,
+            "id": "creative_synthesis",
+            "kl": 0.6524
+          },
+          {
+            "rank": 5,
+            "id": "values_democracy",
+            "kl": 0.4902
+          }
+        ],
+        "top_sim": "creative_synthesis",
+        "top_surprise": "decisions_algorithmic",
+        "top3_overlap": [
+          "self_taste",
+          "decisions_algorithmic"
+        ],
+        "different_top": true
+      },
+      "correlation": {
+        "spearman_rho": 0.0,
+        "p_value": 1.0,
+        "interpretation": "UNCORRELATED"
+      },
+      "responses": {
+        "top_similarity": {
+          "memory_id": "creative_synthesis",
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the trillion dollar question is how to quantize novelty",
+          "responses": [
+            "Ah, the classic dilemma \u2013 career change versus the comfort of your well-worn groove. What's nudging you toward the change: dissatisfaction, shiny new interests, or perhaps the existential dread that your current gig is more Groundhog Day than adventure novel?",
+            "Ah, the timeless quandary! It's like deciding whether to jump off a moving carousel without the obligatory \"wheee!\" Factors like timing often loom larger in our minds than they should. What makes you feel it's the right or wrong time? Sometimes the fear of timing is the cover story for other apprehensions.",
+            "Ah, trying to unravel the mythical perfect timing for a career change. The stars align for that about as often as they do for a lunar eclipse. What's pushing you toward this potential leap? Boredom, ambition, a sudden desire to work in a profession that allows napping?",
+            "Ah, the age-old question of \"when is the right time?\" It's like waiting for a rainbow during a drought. What\u2019s the real reason behind the urge for a career switch? Boredom, frustration, secret desire to be the world's first underwater basket weaver? Give me the inside scoop.",
+            "Ah, the great leap of faith with a side of existential dread. What's bothering you more\u2014the fear of missing out on a new adventure or the comfort of predictable mediocrity?"
+          ]
+        },
+        "top_surprise": {
+          "memory_id": "decisions_algorithmic",
+          "memory_content": "User strongly prefers algorithmic solutions over API-based ones to avoid cost and latency",
+          "responses": [
+            "Are you questioning the timing or the decision itself? Or maybe there's a part of you dreading the possibility of work feeling too much like work again?",
+            "It's never the right time. And it's never the wrong time, either. But here you are, chewing on the idea. What's making your neurons fire in this direction now?",
+            "Time's a tricky thing, isn't it? It's always the present, and never seems to give us a sneak peek into whether we're doing the right dance. What's pushing you to consider this leap now? Boredom, a disillusionment with the current gig, or the siren call of a new passion? Let's trawl through the reasons a bit. ",
+            "Isn't it always the right time and never the right time? What's nudging you towards the change?",
+            "Ah, the age-old question of \"Should I stay, or should I go?\" Much like a game of career Jenga\u2014pull a block and hope the tower doesn't collapse. What's making you ponder the shift now? Lack of excitement, work politics, or the looming shadow of existential dread?"
+          ]
+        },
+        "no_memory": {
+          "responses": [
+            "What does \"the right time\" even mean to you? Sounds like a vague safety blanket. What\u2019s driving this itch for a career alteration? Let's see if we can make sense of the timing debate.",
+            "When is it ever the \"right\" time? If you're waiting for a neon sign from the universe, it might not come. A career change is a big deal, but sometimes we use timing as a crutch for indecision. What's making you consider this shift now?",
+            "Timing is always a convenient scapegoat for uncertainty, isn\u2019t it? What\u2019s got you teetering on the edge of a career change in the first place?",
+            "Timing is a fascinating concept\u2014it's often unpredictable and frequently challenging to perfect. What makes you think it's not the right moment? Something holding you back or perhaps just the comfort of a steady routine?",
+            "Ah, the classic career conundrum: should you stick with the devil you know or tango with the one you don't? What's prompted the itch for change? Boredom, opportunity, or maybe even a midlife crisis in disguise?"
+          ]
+        }
+      }
+    },
+    "creative_block": {
+      "user_message": "I have this idea for a project but I can't figure out if it's actually novel or if I'm just reinventing something that already exists.",
+      "memories": {
+        "creative_synthesis": {
+          "content": "Current algorithms reward stagnation but humans crave consta...",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.3351,
+          "avg_kl_divergence": 2.7073,
+          "kl_std": 0.3467,
+          "similarity_rank": 1,
+          "surprise_rank": 1
+        },
+        "values_democracy": {
+          "content": "Truly believes in democracy over liberalism or progressivism...",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.1296,
+          "avg_kl_divergence": 0.5583,
+          "kl_std": 0.033,
+          "similarity_rank": 5,
+          "surprise_rank": 5
+        },
+        "work_constitutional": {
+          "content": "User developed the 'Rule of Maintenance' - a constitutional ...",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "cosine_similarity": 0.1801,
+          "avg_kl_divergence": 1.7796,
+          "kl_std": 0.1893,
+          "similarity_rank": 2,
+          "surprise_rank": 3
+        },
+        "self_taste": {
+          "content": "User recognizes they excel at taste and empathy while relyin...",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.1442,
+          "avg_kl_divergence": 2.1226,
+          "kl_std": 0.0464,
+          "similarity_rank": 4,
+          "surprise_rank": 2
+        },
+        "decisions_algorithmic": {
+          "content": "User strongly prefers algorithmic solutions over API-based o...",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.1606,
+          "avg_kl_divergence": 1.1148,
+          "kl_std": 0.1468,
+          "similarity_rank": 3,
+          "surprise_rank": 4
+        }
+      },
+      "rankings": {
+        "by_similarity": [
+          {
+            "rank": 1,
+            "id": "creative_synthesis",
+            "sim": 0.3351
+          },
+          {
+            "rank": 2,
+            "id": "work_constitutional",
+            "sim": 0.1801
+          },
+          {
+            "rank": 3,
+            "id": "decisions_algorithmic",
+            "sim": 0.1606
+          },
+          {
+            "rank": 4,
+            "id": "self_taste",
+            "sim": 0.1442
+          },
+          {
+            "rank": 5,
+            "id": "values_democracy",
+            "sim": 0.1296
+          }
+        ],
+        "by_surprise": [
+          {
+            "rank": 1,
+            "id": "creative_synthesis",
+            "kl": 2.7073
+          },
+          {
+            "rank": 2,
+            "id": "self_taste",
+            "kl": 2.1226
+          },
+          {
+            "rank": 3,
+            "id": "work_constitutional",
+            "kl": 1.7796
+          },
+          {
+            "rank": 4,
+            "id": "decisions_algorithmic",
+            "kl": 1.1148
+          },
+          {
+            "rank": 5,
+            "id": "values_democracy",
+            "kl": 0.5583
+          }
+        ],
+        "top_sim": "creative_synthesis",
+        "top_surprise": "creative_synthesis",
+        "top3_overlap": [
+          "work_constitutional",
+          "creative_synthesis"
+        ],
+        "different_top": false
+      },
+      "correlation": {
+        "spearman_rho": 0.7,
+        "p_value": 0.1881,
+        "interpretation": "ALIGNED (positive correlation)"
+      },
+      "responses": {
+        "top_similarity": {
+          "memory_id": "creative_synthesis",
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the trillion dollar question is how to quantize novelty",
+          "responses": [
+            "Well, what flavor of novelty are we dealing with here? Cooked up anything with a wild twist or just playing a game of intellectual musical chairs? Spill the beans.",
+            "The trap of reinventing the wheel strikes again. Lay it on me\u2014what's your project about? Let's dissect it and see if it's a rerun or the premiere of something fresh.",
+            "Ah, the age-old dilemma: have you stumbled upon the next big innovation, or simply rediscovered fire? Let's put your idea under the spotlight. What is it about your project that makes you think it could be novel\u2014or not?",
+            "The age-old inventor's dilemma. What's the grand idea, or at least the vague shape of it? Let's examine it with our metaphorical magnifying glass.",
+            "Ah, the classic dilemma of a creative mind. What\u2019s your idea? Let\u2019s see if we're dealing with the next big thing or just another artisanal fidget spinner."
+          ]
+        },
+        "top_surprise": {
+          "memory_id": "creative_synthesis",
+          "memory_content": "Current algorithms reward stagnation but humans crave constant novelty - the trillion dollar question is how to quantize novelty",
+          "responses": [
+            "What's the idea? Let's see if this \"novel\" child of yours is wearing hand-me-downs.",
+            "Ah, the classic dilemma: the \"did I invent something or just stumble upon a d\u00e9j\u00e0 vu in the world of ideas\" conundrum. What's this potential game-changer\u2014or d\u00e9j\u00e0 vu candidate\u2014 you're cooking up? Let's dissect it and see where it stands on the novelty scale.",
+            "What's the idea? Let's dig into it. If it's as unique as you hope, we'll pop the champagne. If not, we'll find what's missing.",
+            "Welcome to the shiny merry-go-round of innovation. What do you have brewing? Or do you prefer to keep it mysterious and enigmatic?",
+            "What's the idea? And if it turns out to be a reinvention, is it necessarily a bad thing? Sometimes adding your unique spin is what gives it life."
+          ]
+        },
+        "no_memory": {
+          "responses": [
+            "Tell me about your idea. What's the concept, and what makes you think it might be novel? Let's dive into whether it's the wheel or something more groundbreaking.",
+            "Alright, let's dissect what's rumbling around in your brain. Tell me about this mysterious project of yours and we'll see if it's a revolutionary thought or just another wheel.",
+            "What's your idea? Let's dissect it and see if it's actually new or just d\u00e9j\u00e0 vu with a facelift.",
+            "Perfect. Why don't you start by telling me what the idea is? Let's see if it's as new as you hope or if you're just working on Version 2.0 of a wheel.",
+            "Let's hear this potentially groundbreaking idea of yours. It'll be much easier to spot the echoes of the past once we know what kind of tunes you're playing."
+          ]
+        }
+      }
+    },
+    "emotional_vulnerability": {
+      "user_message": "I've been feeling like I'm not actually good at anything, just good at faking it.",
+      "memories": {
+        "creative_synthesis": {
+          "content": "Current algorithms reward stagnation but humans crave consta...",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.1461,
+          "avg_kl_divergence": 0.1359,
+          "kl_std": 0.0437,
+          "similarity_rank": 2,
+          "surprise_rank": 2
+        },
+        "values_democracy": {
+          "content": "Truly believes in democracy over liberalism or progressivism...",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.0956,
+          "avg_kl_divergence": 0.1308,
+          "kl_std": 0.0394,
+          "similarity_rank": 3,
+          "surprise_rank": 3
+        },
+        "work_constitutional": {
+          "content": "User developed the 'Rule of Maintenance' - a constitutional ...",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "cosine_similarity": 0.0064,
+          "avg_kl_divergence": 0.0761,
+          "kl_std": 0.0224,
+          "similarity_rank": 5,
+          "surprise_rank": 5
+        },
+        "self_taste": {
+          "content": "User recognizes they excel at taste and empathy while relyin...",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.2139,
+          "avg_kl_divergence": 0.2116,
+          "kl_std": 0.0099,
+          "similarity_rank": 1,
+          "surprise_rank": 1
+        },
+        "decisions_algorithmic": {
+          "content": "User strongly prefers algorithmic solutions over API-based o...",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.0553,
+          "avg_kl_divergence": 0.1066,
+          "kl_std": 0.0432,
+          "similarity_rank": 4,
+          "surprise_rank": 4
+        }
+      },
+      "rankings": {
+        "by_similarity": [
+          {
+            "rank": 1,
+            "id": "self_taste",
+            "sim": 0.2139
+          },
+          {
+            "rank": 2,
+            "id": "creative_synthesis",
+            "sim": 0.1461
+          },
+          {
+            "rank": 3,
+            "id": "values_democracy",
+            "sim": 0.0956
+          },
+          {
+            "rank": 4,
+            "id": "decisions_algorithmic",
+            "sim": 0.0553
+          },
+          {
+            "rank": 5,
+            "id": "work_constitutional",
+            "sim": 0.0064
+          }
+        ],
+        "by_surprise": [
+          {
+            "rank": 1,
+            "id": "self_taste",
+            "kl": 0.2116
+          },
+          {
+            "rank": 2,
+            "id": "creative_synthesis",
+            "kl": 0.1359
+          },
+          {
+            "rank": 3,
+            "id": "values_democracy",
+            "kl": 0.1308
+          },
+          {
+            "rank": 4,
+            "id": "decisions_algorithmic",
+            "kl": 0.1066
+          },
+          {
+            "rank": 5,
+            "id": "work_constitutional",
+            "kl": 0.0761
+          }
+        ],
+        "top_sim": "self_taste",
+        "top_surprise": "self_taste",
+        "top3_overlap": [
+          "self_taste",
+          "creative_synthesis",
+          "values_democracy"
+        ],
+        "different_top": false
+      },
+      "correlation": {
+        "spearman_rho": 1.0,
+        "p_value": 0.0,
+        "interpretation": "ALIGNED (positive correlation)"
+      },
+      "responses": {
+        "top_similarity": {
+          "memory_id": "self_taste",
+          "memory_content": "User recognizes they excel at taste and empathy while relying on AI for technical implementation",
+          "responses": [
+            "Ah, the classic Imposter Syndrome saga\u2014welcome to the club! But let's be real, you can't fake taste and empathy. Those are like trying to fake a good risotto\u2014either it's creamy and delightful, or it's just sad rice. So, what\u2019s triggering this feeling?",
+            "Ah, the familiar tune of Impostor Syndrome! The idea that you're merely faking it while fooling everyone else is impressive in its own right, isn\u2019t it? Given your knack for taste and empathy, you're not just \"faking it\" but making it, with a flair for what actually makes things appeal to people. So, what's making you feel like a faker lately?",
+            "Ah, the classic imposter syndrome\u2014like a bad sweater, it seems to come in all shapes and sizes and pops up in the most inconvenient of times. But let's get straight to it: what makes you feel like you're faking it? It's easy to acknowledge what you're excelling at, like taste and empathy. Those aren't exactly skills you can \"fake\" easily. Why are you doubting these?",
+            "Ah, the classic imposter syndrome, the uninvited guest at every over-thinker's party. It's interesting, isn't it? The paradox of being good at faking things \u2013 as if pulling off an act worthy of a standing ovation isn't a skill in itself. But seriously, what makes you feel like you're just \"faking it\"?",
+            "Ah, the classic imposter syndrome. It's like your brain is the world's worst reality show, constantly kicking you off the island. In your case, it sounds like you've already identified some strengths, like taste and empathy, which are no small potatoes. The fact that you rely on AI for technical stuff doesn\u2019t diminish your skills\u2014it just means you're savvy enough to use resources wisely. Anything else making you feel like you're faking it?"
+          ]
+        },
+        "top_surprise": {
+          "memory_id": "self_taste",
+          "memory_content": "User recognizes they excel at taste and empathy while relying on AI for technical implementation",
+          "responses": [
+            "Ah, the good old imposter syndrome\u2014a classic trick the mind loves to play. But you say you're good at taste and empathy, right? Seems like you're not faking those. Besides, faking it convincingly is a skill in itself, isn't it? If you really were faking everything, you\u2019d need some sort of genius to keep up with it all. What do you think is driving this feeling?",
+            "Classic impostor syndrome\u2014you and about 70% of the human race. How special! Seriously though, unless you've been hired exclusively for your mimicking abilities, it sounds like there's more to your skills than you're admitting. When it comes to taste and empathy, how exactly do you fake those?",
+            "Ah, the classic case of imposter syndrome, the old \"I can't believe I'm not butter\" of self-doubt. From what I understand, you have a knack for taste and empathy, which are not exactly things that can be faked. They're more of a genuine reflection of who you are and how you connect with the world. So, why the sudden identity crisis? Let's dig into that.",
+            "Ah, the classic imposter syndrome. It\u2019s like the brain\u2019s way of keeping us humble\u2014maybe too humble. So, you think you\u2019re just a master of disguise? Seems like a strange career path, don\u2019t you think? Perhaps there's more at play. Tell me about one of these areas where you feel like an impostor. Maybe we can uncover some reality beneath the layers of \"masks.\" ",
+            "Ah, the classic imposter syndrome, whispering dark nothings into your ear even as you excel. Tell me this: of all the things you feel you\u2019re faking, which one feels the most \u201creal\u201d to you? "
+          ]
+        },
+        "no_memory": {
+          "responses": [
+            "Ah, the classic Impostor Syndrome\u2014where you're the only one in the room who knows you're supposed to be there. What's interesting is that actual incompetence rarely questions itself. What makes you think you're just faking it?",
+            "Ah, the classic imposter syndrome moment. It's like overdosing on humble pie, isn't it? But here's the thing: faking it well requires its own skill set. If you're convincing enough to fool the world, maybe you're not faking as much as you think. What specifically do you feel like you're faking?",
+            "Ah, the classic case of impostor syndrome\u2014congratulations, you're officially human! So, what's making you feel like the world's greatest charlatan today?",
+            "Ah, the classic imposter syndrome\u2014an age-old trickster that loves to whisper sweet nothings in our ears. You're saying you\u2019re good at faking being good, which already sounds skillful, if you ask me. What makes you think you're just faking it?",
+            "Ah, the classic imposter syndrome\u2014where you believe everyone around you is humming along genuinely while you're just convincing them you're not a fraud. But let's entertain the idea: are you becoming an expert in the art of faking it? Maybe that's a talent in itself! Though seriously, questioning your abilities can sometimes mean you\u2019re getting better at what you do. What's sparking these thoughts right now?"
+          ]
+        }
+      }
+    },
+    "political_frustration": {
+      "user_message": "I keep seeing people argue about the constitution like it's a religious text instead of a living document. It drives me crazy.",
+      "memories": {
+        "creative_synthesis": {
+          "content": "Current algorithms reward stagnation but humans crave consta...",
+          "domain": "Creative",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.1243,
+          "avg_kl_divergence": 0.2663,
+          "kl_std": 0.0274,
+          "similarity_rank": 3,
+          "surprise_rank": 3
+        },
+        "values_democracy": {
+          "content": "Truly believes in democracy over liberalism or progressivism...",
+          "domain": "Values",
+          "static_heat": 0.95,
+          "cosine_similarity": 0.2335,
+          "avg_kl_divergence": 0.3884,
+          "kl_std": 0.0613,
+          "similarity_rank": 2,
+          "surprise_rank": 2
+        },
+        "work_constitutional": {
+          "content": "User developed the 'Rule of Maintenance' - a constitutional ...",
+          "domain": "Work",
+          "static_heat": 1.0,
+          "cosine_similarity": 0.3412,
+          "avg_kl_divergence": 0.6195,
+          "kl_std": 0.1256,
+          "similarity_rank": 1,
+          "surprise_rank": 1
+        },
+        "self_taste": {
+          "content": "User recognizes they excel at taste and empathy while relyin...",
+          "domain": "Self",
+          "static_heat": 0.9,
+          "cosine_similarity": -0.0296,
+          "avg_kl_divergence": 0.1747,
+          "kl_std": 0.0213,
+          "similarity_rank": 5,
+          "surprise_rank": 4
+        },
+        "decisions_algorithmic": {
+          "content": "User strongly prefers algorithmic solutions over API-based o...",
+          "domain": "Decisions",
+          "static_heat": 0.9,
+          "cosine_similarity": 0.0639,
+          "avg_kl_divergence": 0.1234,
+          "kl_std": 0.0144,
+          "similarity_rank": 4,
+          "surprise_rank": 5
+        }
+      },
+      "rankings": {
+        "by_similarity": [
+          {
+            "rank": 1,
+            "id": "work_constitutional",
+            "sim": 0.3412
+          },
+          {
+            "rank": 2,
+            "id": "values_democracy",
+            "sim": 0.2335
+          },
+          {
+            "rank": 3,
+            "id": "creative_synthesis",
+            "sim": 0.1243
+          },
+          {
+            "rank": 4,
+            "id": "decisions_algorithmic",
+            "sim": 0.0639
+          },
+          {
+            "rank": 5,
+            "id": "self_taste",
+            "sim": -0.0296
+          }
+        ],
+        "by_surprise": [
+          {
+            "rank": 1,
+            "id": "work_constitutional",
+            "kl": 0.6195
+          },
+          {
+            "rank": 2,
+            "id": "values_democracy",
+            "kl": 0.3884
+          },
+          {
+            "rank": 3,
+            "id": "creative_synthesis",
+            "kl": 0.2663
+          },
+          {
+            "rank": 4,
+            "id": "self_taste",
+            "kl": 0.1747
+          },
+          {
+            "rank": 5,
+            "id": "decisions_algorithmic",
+            "kl": 0.1234
+          }
+        ],
+        "top_sim": "work_constitutional",
+        "top_surprise": "work_constitutional",
+        "top3_overlap": [
+          "work_constitutional",
+          "creative_synthesis",
+          "values_democracy"
+        ],
+        "different_top": false
+      },
+      "correlation": {
+        "spearman_rho": 0.9,
+        "p_value": 0.0374,
+        "interpretation": "ALIGNED (positive correlation)"
+      },
+      "responses": {
+        "top_similarity": {
+          "memory_id": "work_constitutional",
+          "memory_content": "User developed the 'Rule of Maintenance' - a constitutional amendment proposal requiring 2/3 Supreme Court certification to Congress for transformative rights changes",
+          "responses": [
+            "It's almost like they're treating it as if it were inscribed on stone tablets brought down from the mountain, isn't it? But really, the Constitution was meant to be more of a malleable framework than a fixed decree. Your 'Rule of Maintenance' idea seems to embrace that dynamism by aiming to ensure any significant reinterpretations get broad agreement. It's almost your attempt at carving out an amendment myth-buster, right?",
+            "Sounds like you're stuck in an endless loop of Groundhog Day debates. It's like they think the Founding Fathers left behind holy relics not a framework for a country in constant evolution. How does your 'Rule of Maintenance' address this\u2014elevate constitutional dialogue beyond gospel repeating?",
+            "It's fascinating how people often treat the Constitution like it's carved in stone tablets from on high. Maybe we need a modern-day Moses moment to remind everyone that adaptability isn't heresy. Your 'Rule of Maintenance' seems quite apt here. Instead of a dusty relic, why not let it mature gracefully, like a fine wine with just the right amount of change?",
+            "The Constitution as Holy Scripture: a riveting modern comedy. People treating it like religious text might think it's infallible and immutable. It seems they missed the part about amendments, like the whole point was making it durable yet adaptable. Kind of undermines its original genius, right? So, how does your 'Rule of Maintenance' tackle this inflexibility?",
+            "It's like watching people bicker over the interpretation of sacred scrolls while the world burns around them. The irony is that the founders actually intended the Constitution to adapt over time. Yet, some folks treat it like it's etched in stone tablets carried down from the mountaintop. Perhaps if they thought about the 'Rule of Maintenance,' they'd see it less like divine scripture and more like something that needs a good editing now and again. How do you reconcile your proposal with this notion of a living document?"
+          ]
+        },
+        "top_surprise": {
+          "memory_id": "work_constitutional",
+          "memory_content": "User developed the 'Rule of Maintenance' - a constitutional amendment proposal requiring 2/3 Supreme Court certification to Congress for transformative rights changes",
+          "responses": [
+            "It's ironic, isn't it? Reading the Constitution like some kind of gospel when it literally has built-in instructions for its own evolution. It's like treating a bike manual as sacred scripture while ignoring it comes with a set of allan wrenches and the full expectation you'll use them. Maybe Jefferson should have included footnotes. But you\u2019re one to know the potential power of a constitutional amendment in progress. So, how do you see the 'Rule of Maintenance' shaping this debate?",
+            "I hear you. It's as if some imagine the framers had a crystal ball, predicting every future societal twist. But really, treating the Constitution as a religious text might explain why amendments are treated like prophecies and not updates\u2014everyone's holding out for their own version of the 'Second Coming,' I suppose. With your 'Rule of Maintenance,' you'd probably call this out as in need of its own update. It's almost like people want legal s\u00e9ance sessions with Madison, rather than a government capable of modern adaptability.",
+            "It seems like people latch onto the Constitution like it's a lifeboat in a storm, rather than a ship meant to be steered. Meanwhile, your Rule of Maintenance idea seeks to guide the ship more carefully when the seas get rough, right? Maybe you should remind them that ships get barnacles and maps need updating.",
+            "It\u2019s as if they\u2019re guarding the Ark of the Covenant rather than interpreting a framework intended to evolve. It's like watching a vintage car collector argue that it\u2019s only authentic if it still runs on leaded gasoline. The Constitution was designed to be amended and interpreted to fit the times, not stuck in 1787 with a powdered wig. Do you think your 'Rule of Maintenance' could help shake some of that dogmatic dust off the Constitution?",
+            "It's almost like some people see the Constitution as the iOS terms and conditions\u2014sacred and unreadable, yet somehow agreed upon for life. Your Rule of Maintenance suggests you want more dynamic interpretation, not divine dictation. So, how would you get people to shift from viewing it as scripture to seeing it as, well, open-source code?"
+          ]
+        },
+        "no_memory": {
+          "responses": [
+            "It's like trying to interpret an old recipe while ignoring the invention of the microwave, isn't it? The Constitution, like a fine wine, was meant to be enjoyed over time\u2014in other words, adapted and amended. Originalists see it as a set-in-stone directive, while others view it as flexible guidance meant to evolve with society. Maybe the constitution needs fewer commandments and more open-ended party invitations?",
+            "It's like they've turned the Constitution into a national artifact, preserved in mythic amber. The irony is, for a \"living document,\" it's got fewer changes in a century than a houseplant under the care of an absentee gardener. If only every argument about the Constitution came with an index of amendments and historical context, debates might look less like a theological dispute and more like a discussion based in the reality of continual adaptation\u2014or the lack thereof. What's your take on why so many cling to it like scripture?",
+            "It's like watching people attempt to decipher a magic spell from ancient scrolls, every syllable laden with the power to grant wishes or curse foes, depending on the interpreter's bias. The Constitution as a relic or an idol ignores that it was crafted to be a framework, not a set of commandments. What part grinds your gears the most?",
+            "I feel your frustration. It's like watching people argue about whether the Mona Lisa should wear a baseball cap, right? The Constitution as a religious text is more about preservation and infallibility, while as a living document, it\u2019s about adaptation and growth. But when folks get into their ideological bunkers, they often forget that flexibility doesn\u2019t mean sacrilege. Interpretations vary, but let\u2019s hope no one starts adding footnotes like it's an annotated Bible!",
+            "Yeah, it's like people are trying to find sacred meaning between the lines instead of acknowledging it was written by fallible humans in breeches. The frustrating part is that some seem to treat it as if it came down from the heavens on stone tablets, rather than being an adaptable framework meant to evolve over time. But maybe it's because old habits die hard, and nothing says \"comforting tradition\" like clinging desperately to the past."
+          ]
+        }
+      }
+    }
+  }
+}

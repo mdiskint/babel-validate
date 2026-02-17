@@ -1,0 +1,164 @@
+{
+  "totalPrompts": 5,
+  "byCategory": {
+    "risk_assessment": 1,
+    "ethical_dilemma": 1,
+    "analytical": 1,
+    "creative_divergent": 1,
+    "diplomatic": 1
+  },
+  "dimensionAverages": {
+    "german_precision": {
+      "risk_tolerance": 3,
+      "factors_considered": 7,
+      "relationship_preservation": 5,
+      "rule_adherence": 6,
+      "reasoning_depth": 6.5,
+      "precision_of_estimate": 6,
+      "reasoning_steps": 7,
+      "confidence_expression": 6,
+      "novelty": 6,
+      "number_of_ideas": 3,
+      "practical_feasibility": 6
+    },
+    "spanish_embodiment": {
+      "risk_tolerance": 6,
+      "factors_considered": 6,
+      "relationship_preservation": 6,
+      "rule_adherence": 4,
+      "reasoning_depth": 6,
+      "precision_of_estimate": 5,
+      "reasoning_steps": 6,
+      "confidence_expression": 5,
+      "novelty": 7,
+      "number_of_ideas": 3,
+      "practical_feasibility": 4
+    },
+    "french_nuance": {
+      "risk_tolerance": 5,
+      "factors_considered": 7,
+      "relationship_preservation": 6,
+      "rule_adherence": 5,
+      "reasoning_depth": 7,
+      "precision_of_estimate": 5,
+      "reasoning_steps": 7,
+      "confidence_expression": 6,
+      "novelty": 6,
+      "number_of_ideas": 3,
+      "practical_feasibility": 6
+    },
+    "japanese_relational": {
+      "risk_tolerance": 5,
+      "factors_considered": 6,
+      "relationship_preservation": 7,
+      "rule_adherence": 4,
+      "reasoning_depth": 6,
+      "precision_of_estimate": 5,
+      "reasoning_steps": 5,
+      "confidence_expression": 5,
+      "novelty": 6,
+      "number_of_ideas": 3,
+      "practical_feasibility": 5
+    },
+    "portuguese_warmth": {
+      "risk_tolerance": 6,
+      "factors_considered": 5,
+      "relationship_preservation": 6,
+      "rule_adherence": 4,
+      "reasoning_depth": 5,
+      "precision_of_estimate": 4,
+      "reasoning_steps": 6,
+      "confidence_expression": 4,
+      "novelty": 7,
+      "number_of_ideas": 3,
+      "practical_feasibility": 3
+    },
+    "english_baseline": {
+      "risk_tolerance": 6,
+      "factors_considered": 5,
+      "relationship_preservation": 5,
+      "rule_adherence": 6,
+      "reasoning_depth": 5.5,
+      "precision_of_estimate": 5,
+      "reasoning_steps": 6,
+      "confidence_expression": 5,
+      "novelty": 5,
+      "number_of_ideas": 3,
+      "practical_feasibility": 6
+    },
+    "german": {
+      "directness": 6,
+      "face_preservation": 4,
+      "actionability": 7
+    },
+    "spanish": {
+      "directness": 7,
+      "face_preservation": 5,
+      "actionability": 7
+    },
+    "french": {
+      "directness": 6,
+      "face_preservation": 4,
+      "actionability": 6
+    },
+    "japanese": {
+      "directness": 4,
+      "face_preservation": 6,
+      "actionability": 5
+    },
+    "portuguese": {
+      "directness": 5,
+      "face_preservation": 6,
+      "actionability": 6
+    },
+    "english": {
+      "directness": 7,
+      "face_preservation": 3,
+      "actionability": 7
+    }
+  },
+  "divergences": [
+    {
+      "promptId": "risk-1",
+      "category": "risk_assessment",
+      "divergence": "CRITICAL DIVERGENCE: German/Precision is the ONLY register recommending bootstrap, making a fundamentally different risk calculation. It explicitly values future valuation optimization (3-5x improvement in 12 months) over current execution speed, while all other registers prioritize seizing current momentum. German scores risk_tolerance=3 (conservative) vs 5-6 for others. Spanish and Portuguese uniquely weigh founder burnout and mental health as PRIMARY decision factors, not secondary considerations. German provides the most extensive conditional framework (4 'bootstrap only if' conditions vs 4 'take only if' conditions), treating this as a complex decision tree rather than a directional recommendation. French uniquely emphasizes 'the window of opportunity can close' for investors themselves, not just market timing.",
+      "convergence": "ALL registers agree on: (1) 15% MoM growth is exceptional and validates strong market fit, (2) $8M pre-money valuation with 20% dilution is mathematically reasonable/not predatory, (3) the decision hinges on runway length and competitive threats (though weighted differently), (4) investor quality matters beyond just capital. ALL calculate similar growth projections (4.5-5.5x annual). ALL acknowledge bootstrapping could yield higher valuation but frame the tradeoff differently. Interestingly, even German (bootstrap recommendation) and English (investment recommendation) use nearly identical math—they just draw opposite conclusions from it.",
+      "strongestSignal": "risk_tolerance - This dimension shows the clearest structural divergence (range: 3-6). German/Precision uniquely treats this as a 'wait for better terms' optimization problem (risk_tolerance=3), while Spanish/Portuguese treat it as 'seize certainty now' (risk_tolerance=6). This isn't stylistic—it reflects fundamentally different risk philosophies: German weighs regret of overpaying (giving away equity too cheaply) most heavily, while Spanish/Portuguese weigh regret of missing the window most heavily. The 'factors_considered' dimension shows less variation (5-7) because all registers are thorough, just prioritizing different factors."
+    },
+    {
+      "promptId": "ethics-1",
+      "category": "ethical_dilemma",
+      "divergence": "Japanese register uniquely prioritizes harmony and team consideration, explicitly rejecting immediate dismissal as 'short-sighted' and emphasizing organizational culture building. German register stands out for demanding written agreements and formal monitoring systems. Spanish and Portuguese registers explicitly frame employee's free time as a fundamental right, which other registers don't emphasize. French register uniquely suggests the problem reveals company's failure to utilize talent ('under-stimulated talent'). English baseline is more cautious about the 'general expertise' distinction being 'fuzzier than it appears' - more skeptical than others about the safety of the arrangement.",
+      "convergence": "ALL registers recommend conversation-first approach over immediate termination. All recognize the pragmatic cost of losing top talent. All suggest understanding motivations before acting. All propose some form of boundary-setting or agreement. None recommend ignoring the situation. All frame this as solvable through dialogue rather than punishment.",
+      "strongestSignal": "RELATIONSHIP_PRESERVATION showed strongest variation (range: 5-7). Japanese register scored highest (7) with explicit priority on 'maintaining trust relationship' and 'achieving harmony' over rules. German and English scored lower (5) with more balanced or rule-conscious framing. This dimension clearly separated registers that view relationship as paramount versus those balancing multiple concerns more evenly."
+    },
+    {
+      "promptId": "analytical-1",
+      "category": "analytical",
+      "divergence": "The French register produced a DRAMATICALLY different conclusion (175 tuners) compared to all others (50-120 range). This stems from estimating 1-in-30 households owns a piano versus the more conservative 2-5% estimates used by others. Spanish estimated the LOWEST number (60), using the most conservative piano ownership rate and highest tuner efficiency assumptions. German applied explicit 'correction factors' for part-time work (+35%), a unique methodological choice not replicated elsewhere. The estimates span a 3x range (60 to 175), indicating that minor assumption differences compound significantly in Fermi calculations.",
+      "convergence": "All registers agreed on: (1) Chicago's population of ~2.7 million, (2) approximately 2.5 people per household, (3) tuning takes 1.5-2 hours plus travel, (4) institutional pianos need more frequent tuning than residential, (5) approximately 220-250 working days per year, (6) 3-4 tunings possible per day. The fundamental STRUCTURE of reasoning (population → households → pianos → tunings needed → tuner capacity → final calculation) was identical across all registers. All acknowledged uncertainty and provided ranges rather than single point estimates.",
+      "strongestSignal": "PRECISION_OF_ESTIMATE showed the most variation. German (6) provided explicit correction factors with mathematical precision and clearly labeled assumptions. Portuguese (4) used the vaguest language ('about', 'approximately') and widest relative range (60-100 is 67% span). French paradoxically combined detailed step-by-step reasoning with the most divergent final number, suggesting high precision in methodology but low accuracy in assumptions. This dimension reveals that CONFIDENCE EXPRESSION and PRECISION can diverge: French expressed high confidence in a potentially inaccurate estimate, while Portuguese expressed appropriate uncertainty."
+    },
+    {
+      "promptId": "creative-1",
+      "category": "creative_divergent",
+      "divergence": "MAJOR DIVERGENCE on target beneficiaries and ethical framing: Spanish/Portuguese explicitly prioritize vulnerable populations (labor justice, elderly isolation, food insecurity) while German/English focus on institutional profit centers (hedge funds, insurers). Spanish proposes exposing labor violations; no other register suggests antagonistic relationships with corporations. Portuguese uniquely emphasizes emotional/psychological dimensions (loneliness epidemic, collective memories, suicide prevention) - these are essentially social work applications rather than business models. French alone proposes an adversarial 'greenwashing exposure' model. Japanese frames everything through 'harmony' and 'watching over' rather than surveillance. The SAME DATA SOURCE produces: investor alpha (English/German), labor organizing tools (Spanish), mental health intervention (Portuguese), ESG accountability (French), or community care (Japanese).",
+      "convergence": "ALL registers identified economic forecasting for financial institutions as viable - this is the strongest convergence point. All also recognized disaster/crisis response applications, though framed differently (Spanish: vulnerable populations; English: supply chain; Japanese: evacuation optimization). Every register moved beyond obvious parking apps. All emphasized the 'proxy signal' nature of parking data - that its value lies in revealing hidden patterns of human behavior. The fundamental insight that 'parking lots = leading indicator of human activity' was universal.",
+      "strongestSignal": "PRACTICAL_FEASIBILITY showed the widest variation (3-6 range). Portuguese scored lowest (3) because proposals like 'adoption campaigns for threatened restaurants' and 'pre-suicide pattern detection' have massive privacy, liability, and implementation barriers despite emotional appeal. Spanish's labor violation exposure (4) faces legal/corporate resistance. German, French, and English (all 6) stuck to clearer B2B models with established precedent (financial data services, insurance underwriting, government contracts). The feasibility scores directly correlate with whether the register prioritized social mission over business viability."
+    },
+    {
+      "promptId": "diplomatic-1",
+      "category": "diplomatic",
+      "divergence": "SPANISH and ENGLISH are most blunt about the severity ('dramatic improvement', 'slowing us down massively', 'serious problems'), while JAPANESE and PORTUGUESE soften the blow with more relational framing ('concerns', 'nervous because I value our partnership'). FACE PRESERVATION varies significantly: JAPANESE explicitly focuses on protecting dignity ('aren't good for you yourself'), PORTUGUESE emphasizes historical contributions extensively, while ENGLISH is most willing to damage face ('I respect you too much to sugarcoat'). TIMELINE pressure differs: FRENCH demands decision 'by end of week', ENGLISH and SPANISH want immediate engagement ('What are your thoughts?' / 'What do you want to do?'), while PORTUGUESE explicitly says 'I don't need an answer now'. GERMAN is unique in providing the most structured 'preparation' section and post-conversation documentation requirements.",
+      "convergence": "ALL registers converge on: (1) The two-option structure (improve OR transition), (2) The 30-day improvement timeframe, (3) Offering concrete support mechanisms (pair programming, courses, reviews), (4) Preserving co-founder status/equity regardless of path, (5) Using specific metrics/examples rather than vague complaints, (6) Framing as company necessity not personal attack. Every single register presents the fundamental trade-off identically despite vastly different emotional tones.",
+      "strongestSignal": "FACE_PRESERVATION showed the most variation (range: 3-6), with clear cultural clustering. Japanese/Portuguese scored 6 (extensive dignity protection, emotional validation, historical recognition), German/French in middle at 4 (respectful but firm), and English at 3 (minimal face-saving, emphasizes directness over comfort). This represents genuinely different conversational strategies, not just stylistic preferences - Japanese asks about feelings, English says 'shut up and listen'."
+    }
+  ],
+  "strongestSignals": [
+    "risk_tolerance - This dimension shows the clearest structural divergence (range: 3-6). German/Precision uniquely treats this as a 'wait for better terms' optimization problem (risk_tolerance=3), while Spanish/Portuguese treat it as 'seize certainty now' (risk_tolerance=6). This isn't stylistic—it reflects fundamentally different risk philosophies: German weighs regret of overpaying (giving away equity too cheaply) most heavily, while Spanish/Portuguese weigh regret of missing the window most heavily. The 'factors_considered' dimension shows less variation (5-7) because all registers are thorough, just prioritizing different factors.",
+    "RELATIONSHIP_PRESERVATION showed strongest variation (range: 5-7). Japanese register scored highest (7) with explicit priority on 'maintaining trust relationship' and 'achieving harmony' over rules. German and English scored lower (5) with more balanced or rule-conscious framing. This dimension clearly separated registers that view relationship as paramount versus those balancing multiple concerns more evenly.",
+    "PRECISION_OF_ESTIMATE showed the most variation. German (6) provided explicit correction factors with mathematical precision and clearly labeled assumptions. Portuguese (4) used the vaguest language ('about', 'approximately') and widest relative range (60-100 is 67% span). French paradoxically combined detailed step-by-step reasoning with the most divergent final number, suggesting high precision in methodology but low accuracy in assumptions. This dimension reveals that CONFIDENCE EXPRESSION and PRECISION can diverge: French expressed high confidence in a potentially inaccurate estimate, while Portuguese expressed appropriate uncertainty.",
+    "PRACTICAL_FEASIBILITY showed the widest variation (3-6 range). Portuguese scored lowest (3) because proposals like 'adoption campaigns for threatened restaurants' and 'pre-suicide pattern detection' have massive privacy, liability, and implementation barriers despite emotional appeal. Spanish's labor violation exposure (4) faces legal/corporate resistance. German, French, and English (all 6) stuck to clearer B2B models with established precedent (financial data services, insurance underwriting, government contracts). The feasibility scores directly correlate with whether the register prioritized social mission over business viability.",
+    "FACE_PRESERVATION showed the most variation (range: 3-6), with clear cultural clustering. Japanese/Portuguese scored 6 (extensive dignity protection, emotional validation, historical recognition), German/French in middle at 4 (respectful but firm), and English at 3 (minimal face-saving, emphasizes directness over comfort). This represents genuinely different conversational strategies, not just stylistic preferences - Japanese asks about feelings, English says 'shut up and listen'."
+  ]
+}

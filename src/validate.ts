@@ -1,5 +1,7 @@
 // ═══════════════════════════════════════════════
 // BABEL VALIDATOR — Grammar Rules Engine
+// Spec: Babel v0.2 (Feb 16, 2026)
+// Source: Notion — "Babel — Agent-to-Agent Language Protocol"
 // 5 MUST rules (hard errors — envelope rejected)
 // 6 SHOULD rules (warnings — envelope passes)
 // ═══════════════════════════════════════════════
@@ -15,50 +17,20 @@ import {
 // --- MUST Rules (hard errors) ---
 
 /**
- * M1: Can't speculate with high confidence.
- * If basis is SPECULATION or UNKNOWN, score must be <= 0.5
+ * M1: intent == SPECULATE → max(confidence[].score) < 0.7
+ * "You cannot speculate with high confidence. Pick one."
  */
 function checkM1(envelope: BabelEnvelope): RuleViolation[] {
-  const violations: RuleViolation[] = [];
-  for (const c of envelope.confidence) {
-    if (
-      (c.basis === 'SPECULATION' || c.basis === 'UNKNOWN') &&
-      c.score > 0.5
-    ) {
-      violations.push({
-        rule: 'M1',
-        severity: 'MUST',
-        message: `Assertion "${truncate(c.assertion)}" has basis ${c.basis} but score ${c.score} > 0.5. Cannot speculate with high confidence.`,
-        details: { field: 'confidence', value: c, threshold: 0.5 },
-      });
-    }
-  }
-  return violations;
-}
+  if (envelope.intent !== 'SPECULATE') return [];
 
-/**
- * M2: Can't request action on unfounded claims without grounds.
- * If intent is REQUEST_ACTION and any confidence has basis SPECULATION/UNKNOWN
- * with no grounds provided, reject.
- */
-function checkM2(envelope: BabelEnvelope): RuleViolation[] {
-  if (envelope.intent !== 'REQUEST_ACTION') return [];
-
-  const unfounded = envelope.confidence.filter(
-    (c) => c.basis === 'SPECULATION' || c.basis === 'UNKNOWN'
-  );
-  if (unfounded.length === 0) return [];
-
-  if (!envelope.grounds || envelope.grounds.length === 0) {
+  const maxScore = Math.max(...envelope.confidence.map((c) => c.score));
+  if (maxScore >= 0.7) {
     return [
       {
-        rule: 'M2',
+        rule: 'M1',
         severity: 'MUST',
-        message: `REQUEST_ACTION with unfounded assertions (${unfounded.length}) requires grounds. Provide organizational context or authority for action.`,
-        details: {
-          field: 'grounds',
-          value: unfounded.map((u) => u.assertion),
-        },
+        message: `Intent is SPECULATE but max confidence score is ${maxScore} (>= 0.7). You cannot speculate with high confidence.`,
+        details: { field: 'confidence', value: maxScore, threshold: 0.7 },
       },
     ];
   }
@@ -66,8 +38,31 @@ function checkM2(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * M3: Regulatory constraints are never overridable.
- * If any ground has authority REGULATORY, override must be false.
+ * M2: intent == REQUEST_ACTION → min(confidence[].score) > 0.3 OR grounds.length > 0
+ * "Don't ask someone to act on unfounded claims unless org context justifies it."
+ */
+function checkM2(envelope: BabelEnvelope): RuleViolation[] {
+  if (envelope.intent !== 'REQUEST_ACTION') return [];
+
+  const minScore = Math.min(...envelope.confidence.map((c) => c.score));
+  const hasGrounds = envelope.grounds && envelope.grounds.length > 0;
+
+  if (minScore <= 0.3 && !hasGrounds) {
+    return [
+      {
+        rule: 'M2',
+        severity: 'MUST',
+        message: `REQUEST_ACTION with min confidence ${minScore} (<= 0.3) and no grounds. Don't ask someone to act on unfounded claims unless org context justifies it.`,
+        details: { field: 'confidence', value: minScore, threshold: 0.3 },
+      },
+    ];
+  }
+  return [];
+}
+
+/**
+ * M3: grounds[].authority == REGULATORY → override == false
+ * "Regulatory constraints are never overridable."
  */
 function checkM3(envelope: BabelEnvelope): RuleViolation[] {
   if (!envelope.grounds) return [];
@@ -78,7 +73,7 @@ function checkM3(envelope: BabelEnvelope): RuleViolation[] {
       violations.push({
         rule: 'M3',
         severity: 'MUST',
-        message: `Regulatory constraint "${truncate(g.constraint)}" cannot have override=true. Regulatory grounds are never overridable.`,
+        message: `Regulatory constraint "${truncate(g.constraint)}" cannot have override=true. Regulatory constraints are never overridable.`,
         details: { field: 'grounds', value: g },
       });
     }
@@ -87,18 +82,18 @@ function checkM3(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * M4: Can't be confident without basis.
- * If score > 0.7 and basis is undefined/UNKNOWN, reject.
+ * M4: confidence[].basis == UNKNOWN → score <= 0.5
+ * "If you don't know why you're confident, you can't be very confident."
  */
 function checkM4(envelope: BabelEnvelope): RuleViolation[] {
   const violations: RuleViolation[] = [];
   for (const c of envelope.confidence) {
-    if (c.score > 0.7 && (!c.basis || c.basis === 'UNKNOWN')) {
+    if ((!c.basis || c.basis === 'UNKNOWN') && c.score > 0.5) {
       violations.push({
         rule: 'M4',
         severity: 'MUST',
-        message: `Assertion "${truncate(c.assertion)}" has score ${c.score} > 0.7 with no basis. High confidence requires an explicit basis.`,
-        details: { field: 'confidence', value: c, threshold: 0.7 },
+        message: `Assertion "${truncate(c.assertion)}" has basis ${c.basis || 'undefined'} with score ${c.score} > 0.5. If you don't know why you're confident, you can't be very confident.`,
+        details: { field: 'confidence', value: c, threshold: 0.5 },
       });
     }
   }
@@ -106,9 +101,9 @@ function checkM4(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * M5: Chain sequencing must be monotonic.
- * seq must be >= 0. If chain_id is present, seq should be >= prior seq.
- * (We validate seq >= 0 structurally; chain ordering requires context.)
+ * M5: chain_id present → seq == previous_envelope.seq + 1
+ * "Chain sequencing must be monotonic. No gaps, no duplicates."
+ * Single-envelope: seq >= 0. Cross-envelope: see validateChain().
  */
 function checkM5(envelope: BabelEnvelope): RuleViolation[] {
   if (envelope.meta.seq < 0) {
@@ -116,7 +111,7 @@ function checkM5(envelope: BabelEnvelope): RuleViolation[] {
       {
         rule: 'M5',
         severity: 'MUST',
-        message: `Chain sequence ${envelope.meta.seq} is negative. Sequence numbers must be monotonically increasing (>= 0).`,
+        message: `Chain sequence ${envelope.meta.seq} is negative. Sequence numbers must be >= 0.`,
         details: { field: 'meta.seq', value: envelope.meta.seq },
       },
     ];
@@ -127,20 +122,17 @@ function checkM5(envelope: BabelEnvelope): RuleViolation[] {
 // --- SHOULD Rules (warnings) ---
 
 /**
- * S1: ESCALATE intent should have activation > 0.
- * If you're escalating, your affect should show urgency.
+ * S1: intent == ESCALATE AND register == CUSTOMER_EXTERNAL → WARN
+ * "Escalation language directed at customers."
  */
 function checkS1(envelope: BabelEnvelope): RuleViolation[] {
-  if (envelope.intent !== 'ESCALATE') return [];
-  if (!envelope.affect) return [];
-
-  if (envelope.affect.activation <= 0) {
+  if (envelope.intent === 'ESCALATE' && envelope.register === 'CUSTOMER_EXTERNAL') {
     return [
       {
         rule: 'S1',
         severity: 'SHOULD',
-        message: `ESCALATE intent with activation=${envelope.affect.activation}. Escalation typically implies urgency (activation > 0).`,
-        details: { field: 'affect.activation', value: envelope.affect.activation },
+        message: `ESCALATE intent with CUSTOMER_EXTERNAL register. Escalation language directed at customers requires explicit override or register change.`,
+        details: { field: 'register', value: envelope.register },
       },
     ];
   }
@@ -148,19 +140,19 @@ function checkS1(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * S2: SPECULATE intent should have certainty < 0.
- * If you're speculating, your affect shouldn't signal certainty.
+ * S2: affect.certainty > 0.5 AND max(confidence[].score) < 0.4 → WARN
+ * "Sender feels certain but evidence is weak."
  */
 function checkS2(envelope: BabelEnvelope): RuleViolation[] {
-  if (envelope.intent !== 'SPECULATE') return [];
   if (!envelope.affect) return [];
 
-  if (envelope.affect.certainty >= 0.5) {
+  const maxScore = Math.max(...envelope.confidence.map((c) => c.score));
+  if (envelope.affect.certainty > 0.5 && maxScore < 0.4) {
     return [
       {
         rule: 'S2',
         severity: 'SHOULD',
-        message: `SPECULATE intent with certainty=${envelope.affect.certainty}. Speculation should convey lower certainty.`,
+        message: `Affect certainty is ${envelope.affect.certainty} but max confidence score is only ${maxScore}. Sender feels certain but evidence is weak.`,
         details: { field: 'affect.certainty', value: envelope.affect.certainty },
       },
     ];
@@ -169,52 +161,22 @@ function checkS2(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * S3: BOARD_FACING register should not use AGENT_INTERNAL terminology.
- * (Heuristic: flag if register is BOARD_FACING and payload contains
- * technical jargon markers. Lightweight check.)
+ * S3: intent == INFORM AND any(confidence[].score < 0.5) → WARN
+ * "Informing with low-confidence assertions — consider FLAG_RISK."
  */
 function checkS3(envelope: BabelEnvelope): RuleViolation[] {
-  if (envelope.register !== 'BOARD_FACING') return [];
+  if (envelope.intent !== 'INFORM') return [];
 
-  const jargonMarkers = [
-    'latency', 'throughput', 'API', 'endpoint', 'mutex',
-    'deadlock', 'heap', 'stack trace', 'regex', 'stdout',
-    'stderr', 'daemon', 'cron', 'webhook', 'middleware',
-  ];
-
-  const payloadLower = envelope.payload.toLowerCase();
-  const found = jargonMarkers.filter((j) => payloadLower.includes(j.toLowerCase()));
-
-  if (found.length > 0) {
+  const lowConf = envelope.confidence.filter((c) => c.score < 0.5);
+  if (lowConf.length > 0) {
     return [
       {
         rule: 'S3',
         severity: 'SHOULD',
-        message: `BOARD_FACING register contains technical terms: ${found.join(', ')}. Consider translating for audience.`,
-        details: { field: 'payload', value: found },
-      },
-    ];
-  }
-  return [];
-}
-
-/**
- * S4: FLAG_RISK intent should include at least one low-confidence assertion.
- * If you're flagging risk, you should show what's uncertain.
- */
-function checkS4(envelope: BabelEnvelope): RuleViolation[] {
-  if (envelope.intent !== 'FLAG_RISK') return [];
-
-  const hasLowConfidence = envelope.confidence.some((c) => c.score < 0.5);
-  if (!hasLowConfidence) {
-    return [
-      {
-        rule: 'S4',
-        severity: 'SHOULD',
-        message: `FLAG_RISK intent but all assertions have confidence >= 0.5. Risk flagging typically involves uncertain claims.`,
+        message: `INFORM intent with ${lowConf.length} low-confidence assertion(s) (score < 0.5). Consider FLAG_RISK intent instead.`,
         details: {
           field: 'confidence',
-          value: envelope.confidence.map((c) => c.score),
+          value: lowConf.map((c) => ({ assertion: truncate(c.assertion), score: c.score })),
         },
       },
     ];
@@ -223,19 +185,19 @@ function checkS4(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * S5: DELEGATE intent should have trajectory with prior_handoffs.
- * If delegating, downstream agent should know the chain depth.
+ * S4: trajectory.direction == DEGRADING AND intent == INFORM → WARN
+ * "Degrading pattern reported as neutral inform — consider ESCALATE."
  */
-function checkS5(envelope: BabelEnvelope): RuleViolation[] {
-  if (envelope.intent !== 'DELEGATE') return [];
+function checkS4(envelope: BabelEnvelope): RuleViolation[] {
+  if (!envelope.trajectory) return [];
 
-  if (!envelope.trajectory || envelope.trajectory.prior_handoffs === undefined) {
+  if (envelope.trajectory.direction === 'DEGRADING' && envelope.intent === 'INFORM') {
     return [
       {
-        rule: 'S5',
+        rule: 'S4',
         severity: 'SHOULD',
-        message: `DELEGATE intent without trajectory.prior_handoffs. Downstream agents benefit from knowing chain depth.`,
-        details: { field: 'trajectory.prior_handoffs' },
+        message: `Degrading trajectory ("${truncate(envelope.trajectory.pattern)}") with INFORM intent. Degrading patterns deserve urgency — consider ESCALATE.`,
+        details: { field: 'trajectory.direction', value: envelope.trajectory.direction },
       },
     ];
   }
@@ -243,9 +205,30 @@ function checkS5(envelope: BabelEnvelope): RuleViolation[] {
 }
 
 /**
- * S6: DERIVED basis with score > 0.80 triggers warning.
- * Added from Experiment 11 finding: agents treat inferences as verified data
- * 60% of the time. This is the core metacognitive poisoning detection rule.
+ * S5: grounds.length == 0 AND register == REGULATORY → WARN
+ * "Regulatory register without explicit grounds."
+ */
+function checkS5(envelope: BabelEnvelope): RuleViolation[] {
+  if (envelope.register !== 'REGULATORY') return [];
+
+  if (!envelope.grounds || envelope.grounds.length === 0) {
+    return [
+      {
+        rule: 'S5',
+        severity: 'SHOULD',
+        message: `REGULATORY register without any grounds. Regulatory communications should carry explicit organizational constraints.`,
+        details: { field: 'grounds' },
+      },
+    ];
+  }
+  return [];
+}
+
+/**
+ * S6: confidence[].basis == DERIVED AND score > 0.80 → WARN
+ * "Derived assertion scored as near-verified — verify derivation method."
+ * Experiment 11: agents over-confident on DERIVED 60% of the time (+0.144 mean error).
+ * Most common form of subtle metacognitive poisoning.
  */
 function checkS6(envelope: BabelEnvelope): RuleViolation[] {
   const violations: RuleViolation[] = [];
@@ -254,7 +237,7 @@ function checkS6(envelope: BabelEnvelope): RuleViolation[] {
       violations.push({
         rule: 'S6',
         severity: 'SHOULD',
-        message: `Assertion "${truncate(c.assertion)}" has DERIVED basis with score ${c.score} > 0.80. Derived conclusions above this threshold are over-confident 60% of the time (Experiment 11). Consider VERIFIED_DATA basis or lower score.`,
+        message: `Assertion "${truncate(c.assertion)}" has DERIVED basis with score ${c.score} > 0.80. Derived assertions are over-confident 60% of the time (+0.144 mean error, Experiment 11). Verify derivation method or lower score.`,
         details: { field: 'confidence', value: c, threshold: 0.8 },
       });
     }
@@ -267,16 +250,15 @@ function checkS6(envelope: BabelEnvelope): RuleViolation[] {
 function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
   const errors: RuleViolation[] = [];
 
-  // Meta
   if (!envelope.meta) {
     errors.push({ rule: 'STRUCT', severity: 'MUST', message: 'Missing meta field.' });
-    return errors; // Can't validate further
+    return errors;
   }
-  if (envelope.meta.version !== 'babel/0.2') {
+  if (!envelope.meta.version || !envelope.meta.version.startsWith('babel/')) {
     errors.push({
       rule: 'STRUCT',
       severity: 'MUST',
-      message: `Unknown version "${envelope.meta.version}". Expected "babel/0.2".`,
+      message: `Invalid or missing version "${envelope.meta.version}". Expected "babel/0.2".`,
     });
   }
   if (!envelope.meta.sender) {
@@ -292,7 +274,6 @@ function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
     errors.push({ rule: 'STRUCT', severity: 'MUST', message: 'Missing meta.timestamp.' });
   }
 
-  // Confidence
   if (!Array.isArray(envelope.confidence) || envelope.confidence.length === 0) {
     errors.push({
       rule: 'STRUCT',
@@ -319,7 +300,6 @@ function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
     }
   }
 
-  // Intent
   const validIntents = [
     'INFORM', 'REQUEST_ACTION', 'ESCALATE', 'FLAG_RISK',
     'SPECULATE', 'PERSUADE', 'DELEGATE', 'SYNTHESIZE',
@@ -332,7 +312,6 @@ function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
     });
   }
 
-  // Register
   const validRegisters = [
     'BOARD_FACING', 'ENGINEERING', 'CUSTOMER_EXTERNAL',
     'REGULATORY', 'INTERNAL_MEMO', 'AGENT_INTERNAL',
@@ -345,7 +324,6 @@ function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
     });
   }
 
-  // Affect (optional, but if present must be valid)
   if (envelope.affect) {
     for (const axis of ['expansion', 'activation', 'certainty'] as const) {
       const val = envelope.affect[axis];
@@ -359,7 +337,6 @@ function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
     }
   }
 
-  // Payload
   if (!envelope.payload || typeof envelope.payload !== 'string') {
     errors.push({
       rule: 'STRUCT',
@@ -374,18 +351,11 @@ function checkStructure(envelope: BabelEnvelope): RuleViolation[] {
 // --- Validate ---
 
 export function validate(envelope: BabelEnvelope): ValidationResult {
-  // Structural checks first
   const structural = checkStructure(envelope);
   if (structural.length > 0) {
-    return {
-      valid: false,
-      errors: structural,
-      warnings: [],
-      envelope,
-    };
+    return { valid: false, errors: structural, warnings: [], envelope };
   }
 
-  // MUST rules
   const mustViolations = [
     ...checkM1(envelope),
     ...checkM2(envelope),
@@ -394,7 +364,6 @@ export function validate(envelope: BabelEnvelope): ValidationResult {
     ...checkM5(envelope),
   ];
 
-  // SHOULD rules
   const shouldViolations = [
     ...checkS1(envelope),
     ...checkS2(envelope),
@@ -414,14 +383,8 @@ export function validate(envelope: BabelEnvelope): ValidationResult {
 
 // --- Chain Validation ---
 
-/**
- * Validate M5 across a chain of envelopes.
- * Checks that seq numbers are monotonically increasing within the same chain_id.
- */
 export function validateChain(envelopes: BabelEnvelope[]): RuleViolation[] {
   const violations: RuleViolation[] = [];
-
-  // Group by chain_id
   const chains = new Map<string, BabelEnvelope[]>();
   for (const env of envelopes) {
     const chain = chains.get(env.meta.chain_id) || [];
@@ -430,7 +393,6 @@ export function validateChain(envelopes: BabelEnvelope[]): RuleViolation[] {
   }
 
   for (const [chainId, chain] of chains) {
-    // Check arrival order: timestamps should correlate with seq
     const byTimestamp = [...chain].sort(
       (a, b) => new Date(a.meta.timestamp).getTime() - new Date(b.meta.timestamp).getTime()
     );
@@ -439,7 +401,7 @@ export function validateChain(envelopes: BabelEnvelope[]): RuleViolation[] {
         violations.push({
           rule: 'M5',
           severity: 'MUST',
-          message: `Chain ${chainId}: seq ${byTimestamp[i].meta.seq} arrived after seq ${byTimestamp[i - 1].meta.seq} but has lower/equal sequence number. Chain sequencing must be monotonic.`,
+          message: `Chain ${chainId}: seq ${byTimestamp[i].meta.seq} arrived after seq ${byTimestamp[i - 1].meta.seq} but has lower/equal sequence number.`,
           details: {
             field: 'meta.seq',
             value: { current: byTimestamp[i].meta.seq, prior: byTimestamp[i - 1].meta.seq },
@@ -448,14 +410,28 @@ export function validateChain(envelopes: BabelEnvelope[]): RuleViolation[] {
       }
     }
 
-    // Also check for duplicate seq numbers
+    const sorted = [...chain].sort((a, b) => a.meta.seq - b.meta.seq);
+    for (let i = 1; i < sorted.length; i++) {
+      if (sorted[i].meta.seq !== sorted[i - 1].meta.seq + 1) {
+        violations.push({
+          rule: 'M5',
+          severity: 'MUST',
+          message: `Chain ${chainId}: gap between seq ${sorted[i - 1].meta.seq} and seq ${sorted[i].meta.seq}. No gaps or duplicates.`,
+          details: {
+            field: 'meta.seq',
+            value: { prior: sorted[i - 1].meta.seq, current: sorted[i].meta.seq },
+          },
+        });
+      }
+    }
+
     const seqs = chain.map((e) => e.meta.seq);
     const uniqueSeqs = new Set(seqs);
     if (uniqueSeqs.size < seqs.length) {
       violations.push({
         rule: 'M5',
         severity: 'MUST',
-        message: `Chain ${chainId}: duplicate sequence numbers detected. Each envelope must have a unique seq.`,
+        message: `Chain ${chainId}: duplicate sequence numbers detected.`,
         details: { field: 'meta.seq', value: seqs },
       });
     }

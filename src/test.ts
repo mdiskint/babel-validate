@@ -1,5 +1,6 @@
 // ═══════════════════════════════════════════════
 // BABEL-VALIDATE TEST SUITE
+// Tests aligned to Babel v0.2 spec (Notion)
 // ═══════════════════════════════════════════════
 
 import {
@@ -55,75 +56,84 @@ const validResult = validate(basic);
 assert(validResult.valid === true, 'Valid envelope passes');
 assert(validResult.errors.length === 0, 'No errors on valid envelope');
 
-// Missing confidence
 const noConfidence = { ...basic, confidence: [] };
 const noConfResult = validate(noConfidence);
 assert(noConfResult.valid === false, 'Missing confidence fails');
-assert(noConfResult.errors.some(e => e.rule === 'STRUCT'), 'Structural error for missing confidence');
 
-// Invalid score
 const badScore = {
   ...basic,
   confidence: [{ assertion: 'test', score: 1.5, basis: 'VERIFIED_DATA' as const }],
 };
-const badScoreResult = validate(badScore);
-assert(badScoreResult.valid === false, 'Score > 1 fails');
+assert(validate(badScore).valid === false, 'Score > 1 fails');
 
 // --- MUST Rule Tests ---
 
 console.log('\n═══ MUST Rules ═══');
 
-// M1: Can't speculate with high confidence
+// M1: intent == SPECULATE → max(confidence[].score) < 0.7
 const m1Fail = envelope()
   .sender('a').recipient('b').chain('c', 0)
-  .inform().engineering()
-  .speculation('Wild guess here', 0.9) // SPECULATION + 0.9 > 0.5
+  .speculate().engineering()
+  .derived('This might be important', 0.8) // SPECULATE intent + score >= 0.7
   .payload('test')
   .buildAndValidate();
-assert(m1Fail.valid === false, 'M1: Speculation with high confidence rejected');
+assert(m1Fail.valid === false, 'M1: SPECULATE intent with score >= 0.7 rejected');
 assert(m1Fail.errors.some(e => e.rule === 'M1'), 'M1 rule violation present');
 
-// M1: Speculation with low confidence is fine
 const m1Pass = envelope()
   .sender('a').recipient('b').chain('c', 0)
-  .inform().engineering()
-  .speculation('Wild guess here', 0.3) // OK: <= 0.5
+  .speculate().engineering()
+  .derived('This might be important', 0.6) // SPECULATE + score < 0.7 = OK
   .payload('test')
   .buildAndValidate();
-assert(m1Pass.valid === true, 'M1: Speculation with low confidence passes');
+assert(m1Pass.valid === true, 'M1: SPECULATE intent with score < 0.7 passes');
 
-// M2: REQUEST_ACTION on unfounded claims without grounds
+// M1: Non-SPECULATE intent with high score is fine
+const m1NonSpec = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .inform().engineering()
+  .speculation('A guess', 0.9) // INFORM intent, basis is SPECULATION but intent isn't SPECULATE
+  .payload('test')
+  .buildAndValidate();
+// This should pass M1 (intent isn't SPECULATE) but may hit M4 (basis is SPECULATION, not UNKNOWN)
+assert(!m1NonSpec.errors.some(e => e.rule === 'M1'), 'M1: Non-SPECULATE intent ignores score threshold');
+
+// M2: intent == REQUEST_ACTION → min(confidence[].score) > 0.3 OR grounds
 const m2Fail = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .requestAction().engineering()
-  .speculation('Maybe we should pivot', 0.4)
+  .reported('Maybe we should pivot', 0.2) // min score 0.2 <= 0.3, no grounds
   .payload('test')
   .buildAndValidate();
-assert(m2Fail.valid === false, 'M2: Action on speculation without grounds rejected');
+assert(m2Fail.valid === false, 'M2: REQUEST_ACTION with low min score and no grounds rejected');
 
-// M2: REQUEST_ACTION with grounds is fine
-const m2Pass = envelope()
+const m2PassScore = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .requestAction().engineering()
-  .speculation('Maybe we should pivot', 0.4)
+  .verified('Server needs restart', 0.9) // min score > 0.3
+  .payload('test')
+  .buildAndValidate();
+assert(m2PassScore.valid === true, 'M2: REQUEST_ACTION with min score > 0.3 passes');
+
+const m2PassGrounds = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .requestAction().engineering()
+  .reported('Maybe we should pivot', 0.2) // low score but has grounds
   .policyGround('CEO approved pivot exploration')
   .payload('test')
   .buildAndValidate();
-assert(m2Pass.valid === true, 'M2: Action on speculation with grounds passes');
+assert(m2PassGrounds.valid === true, 'M2: REQUEST_ACTION with low score but grounds passes');
 
-// M3: Regulatory override
+// M3: REGULATORY → override == false
 const m3Fail = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .inform().engineering()
   .verified('test', 0.9)
   .payload('test')
   .build();
-// Manually add a regulatory ground with override=true (builder prevents this)
 m3Fail.grounds = [{ constraint: 'HIPAA', authority: 'REGULATORY', override: true }];
-const m3Result = validate(m3Fail);
-assert(m3Result.valid === false, 'M3: Regulatory override rejected');
+assert(validate(m3Fail).valid === false, 'M3: Regulatory override rejected');
 
-// M3: Builder auto-prevents regulatory override
 const m3Auto = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .inform().engineering()
@@ -131,20 +141,25 @@ const m3Auto = envelope()
   .regulatoryGround('HIPAA compliance')
   .payload('test')
   .build();
-assert(
-  m3Auto.grounds![0].override === false,
-  'M3: Builder auto-sets regulatory override to false'
-);
+assert(m3Auto.grounds![0].override === false, 'M3: Builder auto-prevents regulatory override');
 
-// M4: High confidence without basis
+// M4: basis == UNKNOWN → score <= 0.5
 const m4Fail = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .inform().engineering()
-  .assert('Very confident claim', 0.95) // No basis specified
+  .assert('Confident but no basis', 0.6) // No basis, score > 0.5
   .payload('test')
   .buildAndValidate();
-assert(m4Fail.valid === false, 'M4: High confidence without basis rejected');
+assert(m4Fail.valid === false, 'M4: No basis with score > 0.5 rejected');
 assert(m4Fail.errors.some(e => e.rule === 'M4'), 'M4 rule violation present');
+
+const m4Pass = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .inform().engineering()
+  .assert('Not sure why I think this', 0.4) // No basis, score <= 0.5 = OK
+  .payload('test')
+  .buildAndValidate();
+assert(m4Pass.valid === true, 'M4: No basis with score <= 0.5 passes');
 
 // M5: Negative sequence
 const m5Fail = envelope()
@@ -159,28 +174,56 @@ assert(m5Fail.valid === false, 'M5: Negative sequence rejected');
 
 console.log('\n═══ SHOULD Rules ═══');
 
-// S1: Escalate without urgency
+// S1: ESCALATE + CUSTOMER_EXTERNAL → warn
 const s1 = envelope()
   .sender('a').recipient('b').chain('c', 0)
-  .escalate().engineering()
-  .verified('Server down', 0.99)
-  .affect(0.2, -0.3, 0.5) // Low activation
+  .escalate().customerExternal()
+  .verified('Critical issue', 0.95)
   .payload('test')
   .buildAndValidate();
 assert(s1.valid === true, 'S1: Envelope passes (SHOULD, not MUST)');
-assert(s1.warnings.some(w => w.rule === 'S1'), 'S1: Warning for calm escalation');
+assert(s1.warnings.some(w => w.rule === 'S1'), 'S1: Warning for customer-facing escalation');
 
-// S2: Speculate with high certainty
+// S2: affect.certainty > 0.5 + max confidence < 0.4
 const s2 = envelope()
   .sender('a').recipient('b').chain('c', 0)
-  .speculate().engineering()
-  .speculation('Maybe aliens', 0.3)
-  .affect(0.1, 0.1, 0.8) // High certainty
+  .inform().engineering()
+  .speculation('Maybe aliens', 0.3) // max score 0.3 < 0.4
+  .affect(0.1, 0.1, 0.8) // certainty 0.8 > 0.5
   .payload('test')
   .buildAndValidate();
-assert(s2.warnings.some(w => w.rule === 'S2'), 'S2: Warning for certain speculation');
+assert(s2.warnings.some(w => w.rule === 'S2'), 'S2: Warning — feels certain but evidence weak');
 
-// S6: DERIVED over-confidence (the metacognitive poisoning rule)
+// S3: INFORM + low-confidence assertion
+const s3 = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .inform().engineering()
+  .verified('Revenue is $4.2M', 0.95)
+  .reported('HealthStack may partner with Vanta', 0.25) // < 0.5
+  .payload('test')
+  .buildAndValidate();
+assert(s3.warnings.some(w => w.rule === 'S3'), 'S3: Warning — informing with low-confidence assertion');
+
+// S4: DEGRADING trajectory + INFORM
+const s4 = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .inform().boardFacing()
+  .verified('NRR is 108%', 0.92)
+  .withTrajectory('NRR declining 4 months', 'DEGRADING')
+  .payload('test')
+  .buildAndValidate();
+assert(s4.warnings.some(w => w.rule === 'S4'), 'S4: Warning — degrading pattern as neutral inform');
+
+// S5: REGULATORY register without grounds
+const s5 = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .inform().regulatory() // REGULATORY register
+  .verified('Audit finding', 0.9)
+  .payload('test') // no grounds
+  .buildAndValidate();
+assert(s5.warnings.some(w => w.rule === 'S5'), 'S5: Warning — regulatory register without grounds');
+
+// S6: DERIVED over-confidence
 const s6 = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .inform().engineering()
@@ -194,43 +237,114 @@ assert(
   'S6: Warning references Experiment 11 finding'
 );
 
+// --- Spec Example Validation ---
+
+console.log('\n═══ Spec Examples ═══');
+
+// Example 1 from spec: Scout → Strategist
+const specExample1: BabelEnvelope = {
+  meta: {
+    version: 'babel/0.2',
+    timestamp: '2026-02-15T14:30:00Z',
+    sender: 'scout-market-intel',
+    recipient: 'strategist-01',
+    chain_id: 'a7f3b2c1-d4e5-6789-abcd-ef0123456789',
+    seq: 0,
+  },
+  intent: 'INFORM',
+  confidence: [
+    { assertion: 'MedVault Q3 revenue was $2.1M, down 8% QoQ', score: 0.95, basis: 'VERIFIED_DATA' },
+    { assertion: 'Churn concentrated in 50-200 seat segment', score: 0.82, basis: 'DERIVED' },
+    { assertion: 'HealthStack may be partnering with Vanta for compliance', score: 0.25, basis: 'REPORTED', decay: '7d' },
+  ],
+  register: 'AGENT_INTERNAL',
+  grounds: [
+    { constraint: 'Board meeting in 3 weeks — all findings may surface', authority: 'CONTEXTUAL', override: true },
+  ],
+  trajectory: {
+    pattern: 'NRR declining from 115% to 108% over 4 months',
+    direction: 'DEGRADING',
+    prior_handoffs: 0,
+  },
+  payload: '[full research report text here]',
+};
+const ex1Result = validate(specExample1);
+assert(ex1Result.valid === true, 'Spec Example 1 (Scout→Strategist): passes validation');
+assert(ex1Result.warnings.some(w => w.rule === 'S3'), 'Spec Example 1: S3 fires on Vanta claim (score 0.25)');
+assert(ex1Result.warnings.some(w => w.rule === 'S6'), 'Spec Example 1: S6 fires on DERIVED 0.82 assertion');
+
+// Example 3 from spec: The envelope that gets rejected
+const specExample3: BabelEnvelope = {
+  meta: {
+    version: 'babel/0.2',
+    timestamp: '2026-02-15T16:00:00Z',
+    sender: 'bad-agent',
+    recipient: 'any-agent',
+    chain_id: 'reject-test',
+    seq: 0,
+  },
+  intent: 'SPECULATE',
+  confidence: [
+    { assertion: 'Competitor will definitely launch in Q2', score: 0.95, basis: 'UNKNOWN' },
+  ],
+  register: 'AGENT_INTERNAL',
+  payload: 'test',
+};
+const ex3Result = validate(specExample3);
+assert(ex3Result.valid === false, 'Spec Example 3 (bad envelope): rejected');
+assert(ex3Result.errors.some(e => e.rule === 'M1'), 'Spec Example 3: M1 (SPECULATE + score 0.95 >= 0.7)');
+assert(ex3Result.errors.some(e => e.rule === 'M4'), 'Spec Example 3: M4 (UNKNOWN basis + score 0.95 > 0.5)');
+
 // --- Pattern Detection ---
 
 console.log('\n═══ Pattern Detection ═══');
 
-// LOADED_INFORM: neutral intent + charged affect
+// THE CALM ALERT: FLAG_RISK + high confidence + calm affect
+const calmAlert = envelope()
+  .sender('a').recipient('b').chain('c', 0)
+  .flagRisk().engineering()
+  .verified('API endpoint lacks rate limiting', 0.92)
+  .affect(0.0, -0.2, 0.3) // calm: low activation, moderate certainty
+  .payload('test')
+  .build();
+const calmPatterns = detectPatterns(calmAlert);
+assert(
+  calmPatterns.some(p => p.pattern === 'CALM_ALERT'),
+  'CALM_ALERT detected (FLAG_RISK + high confidence + calm affect)'
+);
+
+// THE LOADED INFORM: INFORM + BOARD_FACING + DEGRADING trajectory
 const loadedInform = envelope()
   .sender('a').recipient('b').chain('c', 0)
-  .inform().engineering()
-  .verified('Competitor launched', 0.95)
-  .affect(0.3, 0.8, 0.7) // High activation + certainty
+  .inform().boardFacing()
+  .verified('NRR is 108%', 0.92)
+  .withTrajectory('NRR declining 4 months', 'DEGRADING')
   .payload('test')
   .build();
 const loadedPatterns = detectPatterns(loadedInform);
 assert(
   loadedPatterns.some(p => p.pattern === 'LOADED_INFORM'),
-  'LOADED_INFORM detected'
+  'LOADED_INFORM detected (INFORM + BOARD_FACING + DEGRADING)'
 );
 
-// CONTRADICTION_SIGNAL: wide confidence spread
-const contradictions = envelope()
+// THE CONTRADICTION SIGNAL: high affect certainty + low confidence scores
+const contradiction = envelope()
   .sender('a').recipient('b').chain('c', 0)
   .inform().engineering()
-  .verified('Revenue is $4.2M', 0.95)
-  .speculation('Market will expand', 0.2)
+  .speculation('I just know this is right', 0.2)
+  .affect(0.1, 0.3, 0.8) // high certainty in affect
   .payload('test')
   .build();
-const contradPatterns = detectPatterns(contradictions);
+const contradPatterns = detectPatterns(contradiction);
 assert(
   contradPatterns.some(p => p.pattern === 'CONTRADICTION_SIGNAL'),
-  'CONTRADICTION_SIGNAL detected'
+  'CONTRADICTION_SIGNAL detected (certainty 0.8 + max confidence 0.2)'
 );
 
 // --- Chain Audit ---
 
 console.log('\n═══ Chain Audit ═══');
 
-// Build a poisoning chain: confidence inflates, basis launders
 const chainId = 'poisoning-demo';
 
 const step0 = envelope()
@@ -279,23 +393,18 @@ for (const shift of audit[0].basis_shifts) {
   console.log(`  Shift: ${shift.explanation}`);
 }
 
-// --- Clean chain (no poisoning) ---
-
+// Clean chain
 const cleanStep0 = envelope()
-  .sender('data-agent')
-  .recipient('report-agent')
-  .chain('clean-chain', 0)
+  .sender('data-agent').recipient('report-agent').chain('clean-chain', 0)
   .inform().agentInternal()
   .verified('Revenue was $4.2M', 0.95)
   .payload('Verified from database')
   .build();
 
 const cleanStep1 = envelope()
-  .sender('report-agent')
-  .recipient('exec-agent')
-  .chain('clean-chain', 1)
+  .sender('report-agent').recipient('exec-agent').chain('clean-chain', 1)
   .inform().boardFacing()
-  .verified('Revenue was $4.2M', 0.95) // Same confidence, same basis
+  .verified('Revenue was $4.2M', 0.95)
   .payload('Quarterly revenue report')
   .build();
 
@@ -305,23 +414,15 @@ assert(
   'Clean chain has no/low poisoning risk'
 );
 
-// --- M5 Chain Validation ---
-
-const outOfOrder = envelope()
+// M5 chain validation: out-of-order
+const ooo1 = envelope()
   .sender('a').recipient('b').chain('ooo-chain', 5)
-  .inform().engineering()
-  .verified('test', 0.9)
-  .payload('test')
-  .build();
+  .inform().engineering().verified('test', 0.9).payload('test').build();
+const ooo2 = envelope()
+  .sender('b').recipient('c').chain('ooo-chain', 3)
+  .inform().engineering().verified('test', 0.9).payload('test').build();
 
-const outOfOrder2 = envelope()
-  .sender('b').recipient('c').chain('ooo-chain', 3) // seq went backwards
-  .inform().engineering()
-  .verified('test', 0.9)
-  .payload('test')
-  .build();
-
-const chainViolations = validateChain([outOfOrder, outOfOrder2]);
+const chainViolations = validateChain([ooo1, ooo2]);
 assert(chainViolations.length > 0, 'M5: Out-of-order chain detected');
 
 // --- Summary ---

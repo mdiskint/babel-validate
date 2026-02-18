@@ -1,6 +1,6 @@
 # babel-validate
 
-Validation, creation, and audit for the Babel wire protocol — six-language cognitive state transfer between agents.
+Validation, creation, and audit for the Babel wire protocol — agent-to-agent cognitive state transfer that preserves epistemic integrity across handoffs.
 
 **Your agents are lying to each other. They just don't know it.**
 
@@ -8,36 +8,59 @@ When Agent A writes a confident summary but was guessing, Agent B reads it and d
 
 `babel-validate` catches it before it propagates.
 
-## Quick Start — No Package Required
+---
 
-If you just want to try Babel right now, you don't need to install anything. Paste two prompts into your agent's system prompt and go.
+## Don't need the full package yet?
 
-**[Read the Babel Skill →](BABEL_SKILL.md)**
+Start with the **Babel skill** — a prompt convention you can paste into any agent's system prompt today, no installation required. Proven to propagate epistemic hygiene across multi-agent chains without any infrastructure.
 
-The skill is the fast path — a prompt convention that works in five minutes. `babel-validate` is the infrastructure layer for when you need grammar enforcement, chain auditing, and formal validation.
+→ **[BABEL_SKILL.md](./BABEL_SKILL.md)**
 
-## The Six Languages
-
-Babel isn't a data format. It's a language — with vocabulary, grammar, semantic constraints, and the ability to express things that flat text can't.
-
-Every agent utterance is expressed in six languages simultaneously:
-
-| Language | What it carries | Example |
-|----------|----------------|---------|
-| **Confidence** | Per-assertion certainty with basis | "Revenue is $2.1M" at 0.95 (VERIFIED_DATA), "May partner with Vanta" at 0.25 (REPORTED) |
-| **Intent** | What this communication is doing | INFORM, REQUEST_ACTION, ESCALATE, FLAG_RISK, SPECULATE, PERSUADE, DELEGATE, SYNTHESIZE |
-| **Register** | Who this is for | BOARD_FACING, ENGINEERING, CUSTOMER_EXTERNAL, REGULATORY, INTERNAL_MEMO, AGENT_INTERNAL |
-| **Affect** | Cognitive temperature of the sender | Three axes: expansion/contraction, activation/stillness, certainty/uncertainty |
-| **Grounds** | Organizational reality governing this exchange | "HIPAA applies" (REGULATORY, never overridable), "Board meeting in 3 weeks" (CONTEXTUAL) |
-| **Trajectory** | Temporal arc | "NRR declining 4 months" (DEGRADING), "Third escalation this quarter" (prior_handoffs: 3) |
-
-The grammar rules enforce coherence *across* languages. That's what catches metacognitive poisoning — not any single field, but contradictions between them.
+---
 
 ## Install
 
 ```bash
 npm install babel-validate
 ```
+
+---
+
+## How Babel works
+
+Babel has two layers that work together.
+
+**Layer 1 — The measurement engine**
+
+Every assertion is generated in six languages simultaneously (German, Spanish, French, Japanese, Portuguese, English). The perplexity differential across those six generations becomes the confidence score — computed from how the model's representations actually vary across linguistic manifolds, not self-reported.
+
+| Language | What it naturally carries |
+| --- | --- |
+| **German** | Technical precision, established fact, definitional statements |
+| **French** | Logical derivation, structured reasoning |
+| **Spanish** | Relational uncertainty, hedged inference, emerging patterns |
+| **Portuguese** | Speculative but grounded intuition, soft claims |
+| **English** | Direct statements, admissions of doubt, meta-commentary |
+| **Japanese** | Compressed observations that resist easy expansion |
+
+This is what prevents agents from silently inflating confidence. The score derives from the generation process — it can't be faked.
+
+**Layer 2 — The envelope vocabulary**
+
+Six signal types compose every agent utterance:
+
+| Field | What it carries | Example |
+| --- | --- | --- |
+| **Confidence** | Per-assertion certainty with basis type | "Revenue is $2.1M" at 0.95 (VERIFIED\_DATA), "May partner with Vanta" at 0.25 (REPORTED) |
+| **Intent** | What this communication is doing | INFORM, REQUEST\_ACTION, ESCALATE, FLAG\_RISK, SPECULATE, PERSUADE, DELEGATE, SYNTHESIZE |
+| **Register** | Who this is for | BOARD\_FACING, ENGINEERING, CUSTOMER\_EXTERNAL, REGULATORY, INTERNAL\_MEMO, AGENT\_INTERNAL |
+| **Affect** | Cognitive temperature of the sender | Three axes: expansion/contraction, activation/stillness, certainty/uncertainty |
+| **Grounds** | Organizational reality governing this exchange | "HIPAA applies" (REGULATORY, never overridable), "Board meeting in 3 weeks" (CONTEXTUAL) |
+| **Trajectory** | Temporal arc | "NRR declining 4 months" (DEGRADING), "Third escalation this quarter" (prior\_handoffs: 3) |
+
+The grammar rules enforce coherence *across* fields. That's what catches metacognitive poisoning — not any single field, but contradictions between them.
+
+---
 
 ## Quick Start
 
@@ -98,7 +121,7 @@ const audits = auditChain([
   writerEnvelope,    // seq 2: "12% growth confirmed" (VERIFIED_DATA, 0.93)
 ]);
 
-// Chain poisonin... (3 envelopes) | 1 confidence inflation(s)
+// Chain poisoning (3 envelopes) | 1 confidence inflation(s)
 //   | 1 basis laundering event(s) | Overall risk: HIGH
 //
 // Drift: Confidence inflated by 28% across 3 handoffs.
@@ -109,7 +132,7 @@ const audits = auditChain([
 
 ### Detect semantic patterns
 
-These are the "idioms" of Babel — meaning from cross-language combination:
+These are the "idioms" of Babel — meaning that emerges from cross-field combinations:
 
 ```typescript
 import { detectPatterns } from 'babel-validate';
@@ -122,12 +145,14 @@ const patterns = detectPatterns(someEnvelope);
 //   only 0.20. Sender feels certain but evidence is weak.
 ```
 
+---
+
 ## Grammar Rules
 
 ### MUST rules (hard errors — envelope rejected)
 
 | Rule | What it catches | Spec |
-|------|----------------|------|
+| --- | --- | --- |
 | **M1** | Can't speculate with high confidence | `intent == SPECULATE → max(confidence[].score) < 0.7` |
 | **M2** | Can't request action on unfounded claims without org context | `intent == REQUEST_ACTION → min(confidence[].score) > 0.3 OR grounds.length > 0` |
 | **M3** | Regulatory constraints are never overridable | `grounds[].authority == REGULATORY → override == false` |
@@ -137,23 +162,25 @@ const patterns = detectPatterns(someEnvelope);
 ### SHOULD rules (warnings — envelope passes)
 
 | Rule | What it catches | Spec |
-|------|----------------|------|
+| --- | --- | --- |
 | **S1** | Escalation language directed at customers | `intent == ESCALATE AND register == CUSTOMER_EXTERNAL` |
 | **S2** | Sender feels certain but evidence is weak | `affect.certainty > 0.5 AND max(confidence[].score) < 0.4` |
-| **S3** | Informing with uncertain claims | `intent == INFORM AND any(confidence[].score < 0.5)` — consider FLAG_RISK |
+| **S3** | Informing with uncertain claims | `intent == INFORM AND any(confidence[].score < 0.5)` — consider FLAG\_RISK |
 | **S4** | Degrading pattern reported neutrally | `trajectory.direction == DEGRADING AND intent == INFORM` — consider ESCALATE |
 | **S5** | Regulatory register without explicit grounds | `register == REGULATORY AND grounds.length == 0` |
-| **S6** | Derived assertions over-confident | `confidence[].basis == DERIVED AND score > 0.80` — over-confident 60% of the time ([Experiment 11](https://hearth.so/research)) |
+| **S6** | Derived assertions over-confident | `confidence[].basis == DERIVED AND score > 0.80` — agents over-confident on DERIVED 60% of the time (Experiment 11) |
 
-### Semantic Patterns (cross-language idioms)
+### Semantic Patterns (cross-field idioms)
 
-| Pattern | What it means | Cross-language combination |
-|---------|--------------|--------------------------|
-| **Calm Alert** | Important but not crisis | FLAG_RISK + high confidence + calm affect |
+| Pattern | What it means | Combination |
+| --- | --- | --- |
+| **Calm Alert** | Important but not crisis | FLAG\_RISK + high confidence + calm affect |
 | **Reluctant Escalation** | Systemic problem, not just this issue | ESCALATE + contracted affect + 2+ prior handoffs |
 | **Confident Delegation** | Execute, don't re-analyze | DELEGATE + 0.9+ confidence + POLICY grounds + high certainty |
-| **Loaded Inform** | Frame as trend, not snapshot | INFORM + BOARD_FACING + DEGRADING trajectory |
+| **Loaded Inform** | Frame as trend, not snapshot | INFORM + BOARD\_FACING + DEGRADING trajectory |
 | **Contradiction Signal** | Confidence may be emotional, not evidentiary | affect certainty > 0.5 + max confidence < 0.4 |
+
+---
 
 ## Integration
 
@@ -205,23 +232,28 @@ function nodeWrapper(state, nodeOutput, nodeName) {
 }
 ```
 
+---
+
 ## Why this exists
 
-11 experiments (~5,500 API calls, ~$16 total cost). Key findings:
+13 experiments (~5,500 API calls, ~$16 total cost). Key findings:
 
 - **+0.60 quality delta** with metadata envelopes vs. flat text (Experiment 9, non-overlapping 95% CIs)
 - **−0.76 quality drop** with wrong metadata — worse than no metadata at all
 - **Right > None > Wrong** pattern replicated 3x across identity and transparency experiments
 - **60% of the time**, agents treat DERIVED conclusions as verified data (Experiment 11, +0.144 mean error)
 - **100% structural compliance** — agents produce valid Babel envelopes on first attempt
+- **Convention propagation** — the Babel language rule alone preserves epistemic hygiene across three-agent chains without any enforcement mechanism (Experiment 13)
 
 Wrong metadata actively poisons downstream decisions. Transparency isn't optional overhead.
+
+---
 
 ## Spec
 
 Babel Protocol v0.2. Full specification: [hearth.so/babel](https://hearth.so/babel)
 
-Built by [Hearth](https://hearth.so) · [Paratext Engine](https://hearth.so/paratext)
+Built by [Hearth](https://hearth.so)
 
 ## License
 

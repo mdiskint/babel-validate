@@ -8,6 +8,14 @@ When Agent A writes a confident summary but was guessing, Agent B reads it and d
 
 `babel-validate` catches it before it propagates.
 
+## Quick Start — No Package Required
+
+If you just want to try Babel right now, you don't need to install anything. Paste two prompts into your agent's system prompt and go.
+
+**[Read the Babel Skill →](BABEL_SKILL.md)**
+
+The skill is the fast path — a prompt convention that works in five minutes. `babel-validate` is the infrastructure layer for when you need grammar enforcement, chain auditing, and formal validation.
+
 ## The Six Languages
 
 Babel isn't a data format. It's a language — with vocabulary, grammar, semantic constraints, and the ability to express things that flat text can't.

@@ -1,12 +1,7 @@
 ---
 name: babel-epistemic
-version: 0.1.0
 description: Prevents metacognitive poisoning in multi-agent handoffs. Install when your agent hands off work to other agents or receives work from them. Agents that read Babel-tagged outputs maintain confidence calibration without treating upstream inferences as verified facts.
-author: hearth
-homepage: https://hearth.so/babel
-user-invocable: false
 ---
-
 # Babel Epistemic Convention
 
 ## When to install this skill
